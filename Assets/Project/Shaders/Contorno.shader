@@ -1,11 +1,12 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Outlined/Silhouetted Diffuse" {
+Shader "Outlined/Silhouetted Bumped Diffuse" {
 	Properties {
 		_Color ("Main Color", Color) = (.5,.5,.5,1)
 		_OutlineColor ("Outline Color", Color) = (0,0,0,1)
-		_Outline ("Outline width", Range (0.0, 0.03)) = .005
+		_Outline ("Outline width", Range (0.0, 0.1)) = .005
 		_MainTex ("Base (RGB)", 2D) = "white" { }
+		_BumpMap ("Bumpmap", 2D) = "bump" {}
 	}
  
 CGINCLUDE
@@ -47,8 +48,6 @@ ENDCG
 			Tags { "LightMode" = "Always" }
 			Cull Off
 			ZWrite Off
-			ZTest Always
-			ColorMask RGB // alpha not used
  
 			// you can choose what kind of blending mode you want for the outline
 			Blend SrcAlpha OneMinusSrcAlpha // Normal
@@ -61,30 +60,28 @@ CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag
  
-half4 frag(v2f i) :COLOR {
+half4 frag(v2f i) : COLOR {
 	return i.color;
 }
 ENDCG
 		}
  
-		Pass {
-			Name "BASE"
-			ZWrite On
-			ZTest LEqual
-			Blend SrcAlpha OneMinusSrcAlpha
-			Material {
-				Diffuse [_Color]
-				Ambient [_Color]
-			}
-			Lighting On
-			SetTexture [_MainTex] {
-				ConstantColor [_Color]
-				Combine texture * constant
-			}
-			SetTexture [_MainTex] {
-				Combine previous * primary DOUBLE
-			}
-		}
+ 
+CGPROGRAM
+#pragma surface surf Lambert
+struct Input {
+	float2 uv_MainTex;
+	float2 uv_BumpMap;
+};
+sampler2D _MainTex;
+sampler2D _BumpMap;
+uniform float3 _Color;
+void surf(Input IN, inout SurfaceOutput o) {
+	o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
+	o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+}
+ENDCG
+ 
 	}
  
 	SubShader {
@@ -95,8 +92,7 @@ ENDCG
 			Tags { "LightMode" = "Always" }
 			Cull Front
 			ZWrite Off
-			ZTest Always
-			ColorMask RGB
+			Offset 15,15
  
 			// you can choose what kind of blending mode you want for the outline
 			Blend SrcAlpha OneMinusSrcAlpha // Normal
@@ -112,25 +108,22 @@ ENDCG
 			SetTexture [_MainTex] { combine primary }
 		}
  
-		Pass {
-			Name "BASE"
-			ZWrite On
-			ZTest LEqual
-			Blend SrcAlpha OneMinusSrcAlpha
-			Material {
-				Diffuse [_Color]
-				Ambient [_Color]
-			}
-			Lighting On
-			SetTexture [_MainTex] {
-				ConstantColor [_Color]
-				Combine texture * constant
-			}
-			SetTexture [_MainTex] {
-				Combine previous * primary DOUBLE
-			}
-		}
+CGPROGRAM
+#pragma surface surf Lambert
+struct Input {
+	float2 uv_MainTex;
+	float2 uv_BumpMap;
+};
+sampler2D _MainTex;
+sampler2D _BumpMap;
+uniform float3 _Color;
+void surf(Input IN, inout SurfaceOutput o) {
+	o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color;
+	o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+}
+ENDCG
+ 
 	}
  
-	Fallback "Diffuse"
+	Fallback "Outlined/Silhouetted Diffuse"
 }

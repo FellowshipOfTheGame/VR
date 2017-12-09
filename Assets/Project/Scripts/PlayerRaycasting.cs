@@ -17,6 +17,9 @@ public class PlayerRaycasting : MonoBehaviour {
 				if(Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee)){
 					Debug.Log("I touched " + whatIHit.collider.gameObject.name);
 					//renderer.material.shader = Shader.Find("Self-Illumin/Outlined Diffuse");
+					if(whatIHit.collider.gameObject.name == "Sphere" || whatIHit.collider.gameObject.name == "Cube"){
+						Debug.Log("HII");
+					}
 				}
 	}
 }
