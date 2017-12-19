@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerRaycasting : MonoBehaviour {
 	public float distanceToSee;
+	public GameObject player;
 	RaycastHit whatIHit;
 	Material m_material;
 	GameObject refe = null;
@@ -30,13 +31,13 @@ public class PlayerRaycasting : MonoBehaviour {
 			refe = whatIHit.collider.gameObject;
 			if(refe.tag == "Interagir"){
 				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0.1f);
-				if(Input.GetKeyDown("enter"))
-					Destroy(refe);
+				if (Input.GetKeyDown ("enter")) {
+					refe.transform.SetParent (player.transform, false);
+				}
 			}
 		}
 		else{
 			refe = null;
 		}
-		
 	}
 }
