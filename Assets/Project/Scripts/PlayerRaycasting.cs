@@ -31,21 +31,25 @@ public class PlayerRaycasting : MonoBehaviour {
 			refe = whatIHit.collider.gameObject;
 			if(refe.tag == "Interagir"){
 				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0.1f);
-				if (Input.GetKeyDown ("joystick button 2")) {
-					player.GetComponent<PlayerInventory> ().invent.ultimo ++;
-					if (player.GetComponent<PlayerInventory> ().invent.atual == -1)
+				if (Input.GetKeyDown ("joystick button 2") && player.GetComponent<PlayerInventory> ().invent.cheia != 1) {
+					player.GetComponent<PlayerInventory> ().invent.ultimo++;
+					if (player.GetComponent<PlayerInventory> ().invent.atual == -1) {
 						player.GetComponent<PlayerInventory> ().invent.atual++;
+					}
 					if (player.GetComponent<PlayerInventory> ().invent.ultimo < player.GetComponent<PlayerInventory> ().invent.list.Length) {
 						refe.layer = 2;
 						refe.transform.SetParent (player.transform, false);
 						refe.transform.position = player.transform.position + transform.forward * 2;
-						player.GetComponent<PlayerInventory> ().invent.list [player.GetComponent<PlayerInventory> ().invent.ultimo ] = refe;
+						player.GetComponent<PlayerInventory> ().invent.list [player.GetComponent<PlayerInventory> ().invent.ultimo] = refe;
 						player.GetComponent<PlayerInventory> ().invent.list [player.GetComponent<PlayerInventory> ().invent.atual].SetActive (false);
 						player.GetComponent<PlayerInventory> ().invent.atual = player.GetComponent<PlayerInventory> ().invent.ultimo;
 						player.GetComponent<PlayerInventory> ().invent.list [player.GetComponent<PlayerInventory> ().invent.atual].SetActive (true);
-					}else {
-						print ("Lista CHEIA!");
+					} else {
+						player.GetComponent<PlayerInventory> ().invent.cheia = 1;
+						player.GetComponent<PlayerInventory> ().invent.ultimo -= 1;
 					}
+				} else {
+					print ("Lista CHEIA!");
 				}
 			}
 		}

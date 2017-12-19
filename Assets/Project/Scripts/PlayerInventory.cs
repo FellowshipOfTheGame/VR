@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour {
 		public GameObject[] list;
 		public int atual;
 		public int ultimo;
+		public int cheia;
 	};
 	public Inventario invent;
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class PlayerInventory : MonoBehaviour {
 				invent.list [invent.atual].SetActive (false);
 				invent.atual = (invent.atual - 1) % (invent.ultimo+1);
 				if (invent.atual == -1)
-					invent.atual = 2;
+					invent.atual = invent.ultimo;
 				invent.list [invent.atual].SetActive (true);
 			}
 			if (Input.GetKeyDown ("joystick button 5")) {
