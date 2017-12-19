@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerRaycasting : MonoBehaviour {
 	public float distanceToSee;
 	public GameObject player;
+	int ultimo = -1;
 	RaycastHit whatIHit;
 	Material m_material;
 	GameObject refe = null;
+	public GameObject[] inventario;
 	// Use this for initialization
 	void Start () {
 		
@@ -31,8 +33,19 @@ public class PlayerRaycasting : MonoBehaviour {
 			refe = whatIHit.collider.gameObject;
 			if(refe.tag == "Interagir"){
 				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0.1f);
-				if (Input.GetKeyDown ("enter")) {
-					refe.transform.SetParent (player.transform, false);
+				if (Input.GetKeyDown ("joystick button 2")) {
+					ultimo++;
+					if (ultimo < inventario.Length) {
+						refe.layer = 2;
+						refe.transform.SetParent (player.transform, false);
+						refe.transform.position = player.transform.position + transform.forward * 2;
+						inventario [ultimo] = refe;
+						if (ultimo != 0) {
+							inventario [ultimo-1].SetActive (false);
+						}
+					}else {
+						print ("Lista CHEIA!");
+					}
 				}
 			}
 		}
