@@ -2040,6 +2040,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114115814272850092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2051,6 +2063,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114157237512198098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2062,6 +2086,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114174136585207970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2073,6 +2109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114197598421730568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2084,6 +2132,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114214243557703126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2095,6 +2155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114366769725843862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2106,6 +2178,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114412823001738326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2117,6 +2201,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114418724738077188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2128,6 +2224,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114440163286376564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2139,6 +2247,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114447686890287532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2150,6 +2270,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114461018409110506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2161,6 +2293,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114555313939746170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2172,6 +2316,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114576409861006414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2183,6 +2339,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114582801127227566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2194,6 +2362,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114588715064821424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2205,6 +2385,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114615840100572364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2216,6 +2408,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114699619382214166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2227,6 +2431,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114764587822045800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2238,6 +2454,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114798303908854568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2249,6 +2477,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114827134592476386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2260,6 +2500,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114840608489195602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2271,6 +2523,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114851373470230218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2282,6 +2546,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114853280471689496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2293,6 +2569,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114884425497996778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2304,6 +2592,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114913974071085840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2315,6 +2615,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114926697935527604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2326,6 +2638,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!114 &114939582791853314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2337,6 +2661,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8765dfcc9e6ee3946a2e884cdfae4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 0
+  MaxNumVertices: 65000
+  NumberOfSides: 16
+  BaseRadius: 2
+  RadiusStep: 0.9
+  MinimumRadius: 0.02
+  BranchRoundness: 0.8
+  SegmentLength: 0.5
+  Twisting: 20
+  BranchProbability: 0.1
+  checksumSerialized: 0
+  MeshInfo: 
 --- !u!154 &154259310034271036
 TerrainCollider:
   m_ObjectHideFlags: 1
