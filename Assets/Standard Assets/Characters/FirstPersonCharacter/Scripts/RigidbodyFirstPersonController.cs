@@ -128,7 +128,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
-            RotateView();
+            //RotateView();
+
+            rotateTest();
 
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
@@ -259,6 +261,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
+            }
+        }
+
+        private void rotateTest()
+        {
+            float speed = 1.2f;
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.Rotate(Vector3.up * speed);
+            }
+
+            if (Input.GetKey(KeyCode.Q))
+            {
+                transform.Rotate(Vector3.down * speed);
             }
         }
     }
