@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: fence_02_std
+  m_Shader: {fileID: 54, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _AOUV0UV1_ON _SLIDERCONTROLGLOSSCONTROL_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 6864f731309597344a68ea087f53f1a0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 81c3e34ae6f75154ea283fb2102f0bf2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _aorgbcolormaska:
+        m_Texture: {fileID: 2800000, guid: 1cdb0c90db3bf92459cb20bf9d9b61f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _environment:
+        m_Texture: {fileID: 8900000, guid: f9382e5e7ba1b87498b521f1e9c4ac0c, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _specularrgbglossa:
+        m_Texture: {fileID: 2800000, guid: 048b8e1ec839d7247832f2bde749b87c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AOUv0Uv1: 1
+    - _AdditionalBrightnesscontrol: 0.79999995
+    - _BrignessLevelscontrast: 0.7142857
+    - _Cutoff: 0.5
+    - _EmissionLM: 0
+    - _MainBrightnessControl: 0.12499999
+    - _OverrideAmbient: 0
+    - _Shininess: 0.06610363
+    - _SlidercontrolGlosscontrol: 1
+    - _aopower: 1
+    - _emissionintensity: 0
+    - _environmentblur: 0.28571427
+    - _environmentcorrection: 2.2321427
+    - _environmentfresnel: 0.16071428
+    - _environmentpower: 1.8928572
+    - _normalintensity: 1
+    - _normaluv01: 0
+    - _specularpower: 0.53571427
+    m_Colors:
+    - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8021045, g: 0.78617, b: 0.8161765, a: 1}
+    - _SpecColor: {r: 0.84089607, g: 0.76557094, b: 0.86764705, a: 1}
+    - _emissioncolor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
