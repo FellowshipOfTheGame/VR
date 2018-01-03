@@ -29,8 +29,8 @@ public class PlayerRaycasting : MonoBehaviour {
 
 		if(hit){
 			refe = whatIHit.collider.gameObject;
-			if(refe.tag == "Interagir"){
-				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0.1f);
+			if (refe.tag == "Interagir") {
+				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.1f);
 				if (Input.GetKeyDown ("joystick button 2") && player.GetComponent<PlayerInventory> ().invent.cheia != 1) {
 					player.GetComponent<PlayerInventory> ().invent.ultimo++;
 					if (player.GetComponent<PlayerInventory> ().invent.atual == -1) {
@@ -50,6 +50,10 @@ public class PlayerRaycasting : MonoBehaviour {
 					}
 				} else {
 					print ("Lista CHEIA!");
+				}
+			} else if (refe.tag == "Note") {
+				if(Input.GetKeyDown("joystick button 2") && refe.GetComponent<Note>().noteImage.enabled != true){
+					refe.GetComponent<Note> ().ShowNoteImage();
 				}
 			}
 		}
