@@ -117,6 +117,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        bool rotating = false;  // controle de posicao teste
 
         private void Start()
         {
@@ -130,7 +131,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             //RotateView();
 
+            //Metodos criados para fins de testes >>
             rotateTest();
+            checkHeight();
 
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
@@ -226,7 +229,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            //avoids the mouse looking if the game is effectively paused
+            //avoids the mouse looking if the game is effectively paused    
             if (Mathf.Abs(Time.timeScale) < float.Epsilon) return;
 
             // get the rotation before it's changed
@@ -266,7 +269,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void rotateTest()
         {
-            float speed = 1.2f;
+            float speed = 1.4f;
             if (Input.GetKey(KeyCode.E))
             {
                 transform.Rotate(Vector3.up * speed);
@@ -275,6 +278,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Input.GetKey(KeyCode.Q))
             {
                 transform.Rotate(Vector3.down * speed);
+            }
+        }
+
+        private void checkHeight()
+        {
+            if (transform.position.y < 25)
+            {
+                //transform.rotation = new Quaternion(-90f, 0f, 0f, 0f);
+                if (!rotating)
+                {
+                    transform.Rotate(-90f, 0f, 0f, Space.Self);
+                    rotating = true;
+                }
+                if (transform.position.y < 10)
+                {
+                    // pos: 74.4715, 32.79451, 104.5187
+                    // rot: 0, 22.66, 0
+                    transform.position = new Vector3(74.4715f, 32.79451f, 104.5187f);
+                    //transform.rotation = new Quaternion(0f, 22.66f, 0f, 0f);
+                    transform.rotation = Quaternion.identity;
+                    transform.Rotate(0f, 19f, 0f, Space.Self);
+                    rotating = false;
+                }
             }
         }
     }
