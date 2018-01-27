@@ -22,15 +22,17 @@ public class PlayerRaycasting : MonoBehaviour {
 		//Debug.Log("I touched " + whatIHit.collider.gameObject.name);
 		//renderer.material.shader = Shader.Find("Self-Illumin/Outlined Diffuse");
 		if(refe != null){
-			print("entrou");
+			print(refe.name);
 			if(refe.tag == "Interagir")
+				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0);
+			if(refe.tag == "Note")
 				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0);
 		}
 
 		if(hit){
 			refe = whatIHit.collider.gameObject;
 			if (refe.tag == "Interagir") {
-				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.1f);
+				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.05f);
 				if (Input.GetKeyDown ("joystick button 2") && player.GetComponent<PlayerInventory> ().invent.cheia != 1) {
 					player.GetComponent<PlayerInventory> ().invent.ultimo++;
 					if (player.GetComponent<PlayerInventory> ().invent.atual == -1) {
@@ -52,7 +54,8 @@ public class PlayerRaycasting : MonoBehaviour {
 					print ("Lista CHEIA!");
 				}
 			} else if (refe.tag == "Note") {
-				if(Input.GetKeyDown("joystick button 2") && refe.GetComponent<Note>().noteImage.enabled != true){
+				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
+				if((Input.GetKeyDown("joystick button 2") || Input.GetKeyDown(KeyCode.Mouse0)) && refe.GetComponent<Note>().noteImage.enabled != true){
 					refe.GetComponent<Note> ().ShowNoteImage();
 				}
 			}
