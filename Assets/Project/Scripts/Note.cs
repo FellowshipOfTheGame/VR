@@ -26,7 +26,6 @@ public class Note : MonoBehaviour {
 		noteImage.enabled = false;
 		GetComponent<AudioSource> ().PlayOneShot (putawaySound);
 		player.GetComponent<FirstPersonController> ().enabled = true;
-		print ("oi");
 		//note.GetComponent<MeshRenderer> ().enabled = true;
 	}
 
