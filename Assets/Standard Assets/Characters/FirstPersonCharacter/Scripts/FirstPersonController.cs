@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -47,8 +48,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private Sprinter a;
 		private bool rotating;
         // Use this for initialization
+
+
+        // tratamento da transicao
+        [SerializeField] public bool cameraLocked = false;
+        [SerializeField] public bool isClear = false;
+        public bool isScene1 = true;
+
         private void Start()
         {
+            // checando a cena atual
+            if (SceneManager.GetActiveScene().name == "Centro1")
+            {
+                isScene1 = false;
+            }
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -65,6 +79,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            // checando altura para transicoes
+            if (isScene1)
+            {
+                CheckHeight();
+            }
+
+            if (cameraLocked && isScene1)
+            {
+                m_MouseLook.MaximumX = -90f;    // locka a camera olhando pro alto
+            }
+            else
+            {
+                m_MouseLook.MaximumX = 90f;     // deslocka a camera
+                m_MouseLook.MinimumX = -90f;
+            }
+
+
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -245,6 +277,41 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void RotateView()
         {
             m_MouseLook.LookRotation (transform, m_Camera.transform);
+        }
+
+
+        // checar altura para tratamento da transicao
+        public void CheckHeight()
+        {
+            if (transform.position.y < 25)
+            {
+                cameraLocked = true;
+
+                if (transform.position.y < 5)
+                {
+                    // pos: 74.4715, 32.79451, 104.5187 (posição de respawn)
+                    // rot: 0, 22.66, 0
+
+                    if (isClear)    // vai pra proxima cena pois essa esta concluida
+                    {
+                        isScene1 = false;
+                        SceneManager.LoadScene("Centro1", LoadSceneMode.Single);
+                    }
+                    else    // respawna pois nao pegou a nota ainda
+                    {
+                        transform.position = new Vector3(74.4715f, 32.79451f, 104.5187f);
+                        m_MouseLook.MaximumX = 0f;
+                        m_MouseLook.MinimumX = 0f;
+                        cameraLocked = false;
+                    }
+                }
+            }
+        }
+
+
+        public void Cair()
+        {
+            transform.position = new Vector3(transform.position.x, 25f, transform.position.z);
         }
 
 

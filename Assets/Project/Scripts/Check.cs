@@ -12,6 +12,7 @@ public class Check : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
 		if (transform.position.y < 25) {
 			if (!rotating) {
 				transform.Rotate (-90f, 0f, 0f, Space.Self);
@@ -20,6 +21,7 @@ public class Check : MonoBehaviour {
 			if (transform.position.y < 10) {
 				SceneManager.LoadScene ("Centro1", LoadSceneMode.Single);
 			}
-		}
+		}*/
+        
 	}
 }
