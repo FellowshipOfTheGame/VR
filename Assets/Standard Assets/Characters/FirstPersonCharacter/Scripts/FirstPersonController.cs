@@ -10,9 +10,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
+		[SerializeField] public bool m_IsWalking;
+		[SerializeField] public float m_WalkSpeed;
+        [SerializeField] public float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-
+		//public GameObject Player;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -41,7 +41,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-
+		private Vector3 aux;
+		private float timer = 0.0f;
+		private int seconds;
+		private Sprinter a;
+		private bool rotating;
         // Use this for initialization
         private void Start()
         {
@@ -65,7 +69,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -131,6 +135,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
+			checkHeight ();
         }
 
 
@@ -206,13 +212,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
+			a = GetComponent<Sprinter> ();
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			if (a.fadiga == false){
+				m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			}else{
+				m_IsWalking = true;
+			}
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -255,5 +265,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+		private void checkHeight(){
+			if (transform.position.y < 25) {
+				if (!rotating) {
+					transform.Rotate (-90f, 0f, 0f, Space.Self);
+					rotating = true;
+				}
+				if (transform.position.y < 10) {
+					transform.position = new Vector3 (74.4715f, 32.79451f, 104.5187f);
+					transform.rotation = Quaternion.identity;
+					transform.Rotate (0f, 19f, 0f, Space.Self);
+					rotating = false;
+				}
+			}
+		}
     }
 }
