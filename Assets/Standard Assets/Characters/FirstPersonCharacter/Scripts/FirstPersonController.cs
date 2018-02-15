@@ -135,8 +135,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
-
-			checkHeight ();
         }
 
 
@@ -265,20 +263,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
-
-		private void checkHeight(){
-			if (transform.position.y < 25) {
-				if (!rotating) {
-					transform.Rotate (-90f, 0f, 0f, Space.Self);
-					rotating = true;
-				}
-				if (transform.position.y < 10) {
-					transform.position = new Vector3 (74.4715f, 32.79451f, 104.5187f);
-					transform.rotation = Quaternion.identity;
-					transform.Rotate (0f, 19f, 0f, Space.Self);
-					rotating = false;
-				}
-			}
-		}
     }
 }
