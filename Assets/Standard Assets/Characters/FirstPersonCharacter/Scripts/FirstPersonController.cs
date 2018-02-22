@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -10,9 +11,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
+		[SerializeField] public bool m_IsWalking;
+		[SerializeField] public float m_WalkSpeed;
+        [SerializeField] public float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -27,7 +28,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-
+		//public GameObject Player;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -41,10 +42,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-
+		private Vector3 aux;
+		private float timer = 0.0f;
+		private int seconds;
+		private Sprinter a;
+		private bool rotating;
         // Use this for initialization
+
+
+        // tratamento da transicao
+        [SerializeField] public bool cameraLocked = false;
+        [SerializeField] public bool isClear = false;
+        public bool isScene1 = true;
+
         private void Start()
         {
+            // checando a cena atual
+            if (SceneManager.GetActiveScene().name == "Centro1")
+            {
+                isScene1 = false;
+            }
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -61,11 +79,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+            // checando altura para transicoes
+            if (isScene1)
+            {
+                CheckHeight();
+            }
+
+            if (cameraLocked && isScene1)
+            {
+                m_MouseLook.MaximumX = -90f;    // locka a camera olhando pro alto
+            }
+            else
+            {
+                m_MouseLook.MaximumX = 90f;     // deslocka a camera
+                m_MouseLook.MinimumX = -90f;
+            }
+
+
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -206,13 +242,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
+			a = GetComponent<Sprinter> ();
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			if (a.fadiga == false){
+				m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			}else{
+				m_IsWalking = true;
+			}
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -237,6 +277,41 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void RotateView()
         {
             m_MouseLook.LookRotation (transform, m_Camera.transform);
+        }
+
+
+        // checar altura para tratamento da transicao
+        public void CheckHeight()
+        {
+            if (transform.position.y < 25)
+            {
+                cameraLocked = true;
+
+                if (transform.position.y < 5)
+                {
+                    // pos: 74.4715, 32.79451, 104.5187 (posição de respawn)
+                    // rot: 0, 22.66, 0
+
+                    if (isClear)    // vai pra proxima cena pois essa esta concluida
+                    {
+                        isScene1 = false;
+                        SceneManager.LoadScene("Centro1", LoadSceneMode.Single);
+                    }
+                    else    // respawna pois nao pegou a nota ainda
+                    {
+                        transform.position = new Vector3(74.4715f, 32.79451f, 104.5187f);
+                        m_MouseLook.MaximumX = 0f;
+                        m_MouseLook.MinimumX = 0f;
+                        cameraLocked = false;
+                    }
+                }
+            }
+        }
+
+
+        public void Cair()
+        {
+            transform.position = new Vector3(transform.position.x, 25f, transform.position.z);
         }
 
 
