@@ -36,14 +36,13 @@ public class Sprinter : MonoBehaviour {
 		}
 		if (cansaco) {
 			GetComponent<FirstPersonController> ().m_WalkSpeed = 2.5f;
-			MotionBlurModel.Settings blurSettings = profile.motionBlur.settings;
+			/*MotionBlurModel.Settings blurSettings = profile.motionBlur.settings;
 			blurSettings.frameBlending = 1;
-			profile.motionBlur.settings = blurSettings;
+			profile.motionBlur.settings = blurSettings;*/
+			profile.motionBlur.enabled = true;
 		} else {
 			GetComponent<FirstPersonController> ().m_WalkSpeed = 5.0f;
-			MotionBlurModel.Settings blurSettings = profile.motionBlur.settings;
-			blurSettings.frameBlending = 0;
-			profile.motionBlur.settings = blurSettings;
+			profile.motionBlur.enabled = false;
 		}
 	}
 }
