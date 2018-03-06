@@ -31,7 +31,7 @@ public class PlayerRaycasting : MonoBehaviour {
 
 		if(hit){
 			refe = whatIHit.collider.gameObject;
-			print (refe.name);
+			//print (refe.name);
 			if (refe.tag == "Interagir") {
 				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
 				if (Input.GetKeyDown ("joystick button 2") && player.GetComponent<PlayerInventory> ().invent.cheia != 1) {
