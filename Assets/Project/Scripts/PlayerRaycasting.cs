@@ -8,6 +8,9 @@ public class PlayerRaycasting : MonoBehaviour {
 	RaycastHit whatIHit;
 	Material m_material;
 	GameObject refe = null;
+
+    private string lastTouched;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +25,19 @@ public class PlayerRaycasting : MonoBehaviour {
 		//Debug.Log("I touched " + whatIHit.collider.gameObject.name);
 		//renderer.material.shader = Shader.Find("Self-Illumin/Outlined Diffuse");
 		if(refe != null){
-			print(refe.name);
+
+            //print(refe.name);
+            try
+            {
+                if (lastTouched != whatIHit.collider.gameObject.name)
+                {
+                    lastTouched = whatIHit.collider.gameObject.name;
+                    //print("I touched " + whatIHit.collider.gameObject.name);
+                }
+            }
+            catch (System.Exception){}
+            
+
 			if(refe.tag == "Interagir")
 				refe.GetComponent<Renderer>().material.SetFloat("_Outline", 0);
 			if(refe.tag == "Note")
@@ -64,7 +79,14 @@ public class PlayerRaycasting : MonoBehaviour {
 				if ((Input.GetKeyDown ("joystick button 2") || Input.GetKeyDown (KeyCode.Mouse0))){
 					refe.GetComponent<LixeiraHide> ().HideLixeira();
 				}
-			}
+			} else if (refe.tag == "Botao")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    //print(refe.name);
+                    refe.GetComponent<BotoesLigacao>().Press();
+                }
+            }
 		}
 		else{
 			refe = null;
