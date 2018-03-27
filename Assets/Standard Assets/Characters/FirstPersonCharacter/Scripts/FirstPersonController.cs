@@ -295,7 +295,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (isClear)    // vai pra proxima cena pois essa esta concluida
                     {
                         isScene1 = false;
-                        SceneManager.LoadScene("Centro1", LoadSceneMode.Single);
+                        //SceneManager.LoadScene("Centro1", LoadSceneMode.Single);
+                        SceneManager.LoadScene("Loading", LoadSceneMode.Single);
                     }
                     else    // respawna pois nao pegou a nota ainda
                     {
