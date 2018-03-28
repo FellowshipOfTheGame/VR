@@ -13,9 +13,9 @@ public class _Puzzle1Component : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Q)) {
+		if (Input.GetMouseButtonDown (0)) {		// Se clicar com botão esquerdo, vira para esquerda
 			_rotate_left ();
-		} else if (Input.GetKeyDown (KeyCode.E)) {
+		} else if (Input.GetMouseButtonDown (1)) {	// Se clicar com botão direito, vira pra direita
 			_rotate_right ();
 		}
 	}
