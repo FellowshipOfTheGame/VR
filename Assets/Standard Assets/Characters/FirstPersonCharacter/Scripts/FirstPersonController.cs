@@ -296,12 +296,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     // pos: 74.4715, 32.79451, 104.5187 (posição de respawn)
                     // rot: 0, 22.66, 0
 
-                    if (isClear)    // vai pra proxima cena pois essa esta concluida
+                    if (false/*isClear*/)    // vai pra proxima cena pois essa esta concluida
                     {
                         isScene1 = false;
                         //SceneManager.LoadScene("Centro1", LoadSceneMode.Single);  //Load scene right away
                         //SceneManager.LoadScene("Loading", LoadSceneMode.Single);  //Load loading scene
                         //loader.GetComponent<SceneLoader>().AuthorizeLoad();
+
+                        /** DEFINIR AQUI A IDA PRA PROX CENA QUE AINDA SERA FEITA **/
                     }
                     else    // respawna pois nao pegou a nota ainda
                     {

@@ -8,11 +8,12 @@ public class Scenario : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        SetActive(false);
+        //SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (!active)
         {
             count += Time.deltaTime;
@@ -21,5 +22,6 @@ public class Scenario : MonoBehaviour {
                 SetActive(true);
             }
         }
+        */
     }
 }
