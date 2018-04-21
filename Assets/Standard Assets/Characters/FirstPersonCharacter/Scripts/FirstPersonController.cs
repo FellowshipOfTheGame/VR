@@ -11,6 +11,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        private GameObject loader;
+
 		[SerializeField] public bool m_IsWalking;
 		[SerializeField] public float m_WalkSpeed;
         [SerializeField] public float m_RunSpeed;
@@ -57,6 +59,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Start()
         {
+            loader = GameObject.Find("SceneLoader");
+
             // checando a cena atual
             if (SceneManager.GetActiveScene().name == "Centro1")
             {
@@ -295,8 +299,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (isClear)    // vai pra proxima cena pois essa esta concluida
                     {
                         isScene1 = false;
-                        //SceneManager.LoadScene("Centro1", LoadSceneMode.Single);
-                        SceneManager.LoadScene("Loading", LoadSceneMode.Single);
+                        //SceneManager.LoadScene("Centro1", LoadSceneMode.Single);  //Load scene right away
+                        //SceneManager.LoadScene("Loading", LoadSceneMode.Single);  //Load loading scene
+                        //loader.GetComponent<SceneLoader>().AuthorizeLoad();
                     }
                     else    // respawna pois nao pegou a nota ainda
                     {

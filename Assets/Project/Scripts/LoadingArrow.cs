@@ -5,15 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class LoadingArrow : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-        StartCoroutine(LoadYourAsyncScene());
+    private float count = 0f;
+    private GameObject scene = null;
+    private GameObject ui = null;
+
+    // Use this for initialization
+    void Start () {
+
+        //StartCoroutine(LoadYourAsyncScene());     // Used when this is a loading screen Scene
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
         transform.Rotate(new Vector3(0, 0, 5));
-	}
+
+        // Used when this is a loading screen GameObject
+        count += Time.deltaTime;
+        CheckTime();
+    }
 
     IEnumerator LoadYourAsyncScene()
     {
@@ -26,6 +36,14 @@ public class LoadingArrow : MonoBehaviour {
         {
             Debug.Log("async.progress: " + asyncLoad.progress);
             yield return null;
+        }
+    }
+
+    public void CheckTime()
+    {
+        if (count > 5f)
+        {
+            Destroy(this);
         }
     }
 }
