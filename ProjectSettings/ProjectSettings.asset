@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Fog
-  productName: VonRage_prot1
+  productName: Intro_Updated
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -142,7 +142,7 @@ PlayerSettings:
   resolutionScalingMode: 0
   applicationIdentifier:
     Android: com.yago.IntroTesteVR
-    Standalone: com.Fog.VonRage_prot1
+    Standalone: com.Fog.Intro_Updated
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19

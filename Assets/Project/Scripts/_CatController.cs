@@ -32,7 +32,7 @@ public class _CatController : MonoBehaviour {
 	void Update () {
 		if (!_running) {
 			_player_distance = Vector3.Distance (_player.position, transform.position);
-			Debug.Log ("_wp_counter % 2: " + (_wp_counter % 2));
+			//Debug.Log ("_wp_counter % 2: " + (_wp_counter % 2));
 			if (_wp_counter == 0) {			// Caso 1, quando o gato está em baixo do poste piscando
 				if (_player_distance <= _dist1) {	// Se o player chegar perto, o gato vai para as arvores
 					_MoveToNextWp (++_wp_counter, false);

@@ -46,8 +46,9 @@ public class PlayerRaycasting : MonoBehaviour {
 
 		if(hit){
 			refe = whatIHit.collider.gameObject;
-			//print (refe.name);
-			if (refe.tag == "Interagir") {
+            //Debug.Log(refe.name);
+            //Debug.Log(refe.tag);
+            if (refe.tag == "Interagir") {
 				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
 				if (Input.GetKeyDown ("joystick button 2") && player.GetComponent<PlayerInventory> ().invent.cheia != 1) {
 					player.GetComponent<PlayerInventory> ().invent.ultimo++;
@@ -75,7 +76,7 @@ public class PlayerRaycasting : MonoBehaviour {
 					refe.GetComponent<Note> ().ShowNoteImage ();
 				}
 			} else if (refe.tag == "Lixeira") {
-				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
+				//refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
 				if ((Input.GetKeyDown ("joystick button 2") || Input.GetKeyDown (KeyCode.Mouse0))){
 					refe.GetComponent<LixeiraHide> ().HideLixeira();
 				}
@@ -83,7 +84,6 @@ public class PlayerRaycasting : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    //print(refe.name);
                     refe.GetComponent<BotoesLigacao>().Press();
                 }
             }
