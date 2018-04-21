@@ -7,6 +7,9 @@ TagManager:
   - Interagir
   - Note
   - Lixeira
+  - Fire
+  - Teste
+  - Botao
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - 
   - Light
   - Lixeira
-  - 
-  - 
+  - LixPalhaco
+  - Gato
   - 
   - 
   - 

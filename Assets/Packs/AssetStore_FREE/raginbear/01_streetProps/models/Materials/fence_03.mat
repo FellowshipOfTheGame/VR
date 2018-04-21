@@ -49,15 +49,15 @@ Material:
     - _Cutoff: 0.5
     - _EmissionLM: 0
     - _MainBrightnessControl: 0
-    - _OverrideAmbient: 0.3088235
+    - _OverrideAmbient: 1
     - _Shininess: 6.6005664
     - _SlidercontrolGlosscontrol: 1
     - _aopower: 1
     - _emissionintensity: 0
-    - _environmentblur: 0.5535714
-    - _environmentcorrection: 2.9285715
-    - _environmentfresnel: 0.96428573
-    - _environmentpower: 1.25
+    - _environmentblur: 1
+    - _environmentcorrection: 1
+    - _environmentfresnel: 0
+    - _environmentpower: 0
     - _normalintensity: 1
     - _normaluv01: 0
     - _specularpower: 0.51785713
