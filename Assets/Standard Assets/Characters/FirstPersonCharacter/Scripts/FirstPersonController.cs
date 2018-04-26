@@ -62,7 +62,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             loader = GameObject.Find("SceneLoader");
 
             // checando a cena atual
-            if (SceneManager.GetActiveScene().name == "Centro1")
+            if (SceneManager.GetActiveScene().name != "Bosque")
             {
                 isScene1 = false;
             }
@@ -293,7 +293,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (transform.position.y < 5)
                 {
-                    // pos: 74.4715, 32.79451, 104.5187 (posição de respawn)
+                    // pos: 74.4715, 32.79451, 104.5187 (posiï¿½ï¿½o de respawn)
                     // rot: 0, 22.66, 0
 
                     if (false/*isClear*/)    // vai pra proxima cena pois essa esta concluida
