@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 452cfe4357c62a34ab2ef576a7f20253
+timeCreated: 1523125553
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Creepy Circus
+  fontNames:
+  - Creepy Circus
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
