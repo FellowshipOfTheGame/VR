@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class LixeiraHide : MonoBehaviour {
 	public GameObject player;
 	public GameObject camerahide;
-	bool isHiden;
+    public AudioClip inTrash;
+    bool isHiden;
 
 	// Use this for initialization
 	void Start () {
@@ -20,13 +21,15 @@ public class LixeiraHide : MonoBehaviour {
 		camerahide.SetActive (true);
 		camerahide.transform.eulerAngles = new Vector3 (0, 90, 0);
 		isHiden = true;
-	}
+        GetComponent<AudioSource>().PlayOneShot(inTrash);
+    }
 	public void DontHideLixeira(){
 		camerahide.transform.eulerAngles = new Vector3 (0, 90, 0);
 		camerahide.SetActive (false);
 		player.GetComponent<FirstPersonController> ().enabled = true;
 		isHiden = false;
-	}
+        GetComponent<AudioSource>().PlayOneShot(inTrash);
+    }
 	// Update is called once per frame
 	void Update () {
 		if (isHiden == true) {
