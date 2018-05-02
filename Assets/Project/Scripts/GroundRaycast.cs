@@ -6,7 +6,9 @@ public class GroundRaycast : MonoBehaviour {
     public float distanceGround;
     public GameObject Player;
     RaycastHit whatIStep;
-    GameObject refe = null;
+    string refe = null;
+    public AudioClip Violin;
+    bool groot = false;
 
     private string lastTouched;
 	// Use this for initialization
@@ -20,13 +22,13 @@ public class GroundRaycast : MonoBehaviour {
 
         if (refe != null)
         {
-            print(refe.name);
+            print(refe);
             try
             {
-                if (lastTouched != whatIStep.collider.gameObject.name)
+                if (lastTouched != whatIStep.collider.gameObject.tag)
                 {
-                    lastTouched = whatIStep.collider.gameObject.name;
-                    print("I touched " + whatIStep.collider.gameObject.name);
+                    
+                    print("I touched " + whatIStep.collider.gameObject.tag);
                 }
             }
             catch (System.Exception) { }
@@ -34,7 +36,17 @@ public class GroundRaycast : MonoBehaviour {
 
         if (hit)
         {
-            refe = whatIStep.collider.gameObject;
+            refe = whatIStep.collider.gameObject.tag;
+
+            if(refe == "Tronco" && !groot)
+            {
+                GetComponent<AudioSource>().PlayOneShot(Violin);
+                groot = true;
+            }
+            if(refe == "Grama")
+            {
+                groot = false;
+            }
         }
         else
         {
