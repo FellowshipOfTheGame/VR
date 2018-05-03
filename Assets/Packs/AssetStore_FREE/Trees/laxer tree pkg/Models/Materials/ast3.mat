@@ -40,15 +40,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AO: 0.37
-    - _BaseLight: 0.643
-    - _Cutoff: 0.3428571
+    - _BaseLight: 0.3
+    - _Cutoff: 0.3
     - _Occlusion: 0.2
     - _ShadowStrength: 1
     - _Shininess: 1
     - _SquashAmount: 0
     - _TranslucencyViewDependency: 0.4142857
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _Scale: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0}

@@ -24,13 +24,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AO: 0.94
-    - _BaseLight: 0.801
-    - _Cutoff: 0.38
+    - _BaseLight: 0.3
+    - _Cutoff: 0.25
     - _Occlusion: 1.4
     - _Shininess: 0.078125
     - _SquashAmount: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5808823, g: 0.5808823, b: 0.5808823, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _Scale: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
