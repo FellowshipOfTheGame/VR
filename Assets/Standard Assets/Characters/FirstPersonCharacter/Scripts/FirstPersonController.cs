@@ -258,6 +258,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}else{
 				m_IsWalking = true;
 			}*/
+            m_IsWalking = !Input.GetKey(KeyCode.LeftShift); // apagar essa linha depois que consertar a fadiga
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -297,10 +298,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     // pos: 74.4715, 32.79451, 104.5187 (posi��o de respawn)
                     // rot: 0, 22.66, 0
 
-                    if (false/*isClear*/)    // vai pra proxima cena pois essa esta concluida
+                    if (isClear)    // vai pra proxima cena pois essa esta concluida
                     {
                         isScene1 = false;
-                        //SceneManager.LoadScene("Centro1", LoadSceneMode.Single);  //Load scene right away
+                        SceneManager.LoadScene("Parque", LoadSceneMode.Single);  //Load scene right away
                         //SceneManager.LoadScene("Loading", LoadSceneMode.Single);  //Load loading scene
                         //loader.GetComponent<SceneLoader>().AuthorizeLoad();
 
