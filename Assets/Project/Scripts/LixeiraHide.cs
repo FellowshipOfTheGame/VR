@@ -21,6 +21,7 @@ public class LixeiraHide : MonoBehaviour {
 		camerahide.SetActive (true);
 		camerahide.transform.eulerAngles = new Vector3 (0, 90, 0);
 		isHiden = true;
+        GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot(inTrash);
     }
 	public void DontHideLixeira(){
@@ -28,6 +29,7 @@ public class LixeiraHide : MonoBehaviour {
 		camerahide.SetActive (false);
 		player.GetComponent<FirstPersonController> ().enabled = true;
 		isHiden = false;
+        GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot(inTrash);
     }
 	// Update is called once per frame

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GroundRaycast : MonoBehaviour {
     public float distanceGround;
-    public GameObject Player;
+    public GameObject Vio;
     RaycastHit whatIStep;
     string refe = null;
     public AudioClip Violin;
-    bool groot = false;
+    public bool groot = false;
 
     private string lastTouched;
 	// Use this for initialization
@@ -38,14 +38,18 @@ public class GroundRaycast : MonoBehaviour {
         {
             refe = whatIStep.collider.gameObject.tag;
 
-            if(refe == "Tronco" && !groot)
+            if(refe == "Tronco")
             {
-                GetComponent<AudioSource>().PlayOneShot(Violin);
                 groot = true;
+            }
+            if (groot && !Vio.GetComponent<AudioSource>().isPlaying)
+            {
+                Vio.GetComponent<AudioSource>().PlayOneShot(Violin);
+                groot = false;
             }
             if(refe == "Grama")
             {
-                groot = false;
+                Vio.GetComponent<AudioSource>().Stop();
             }
         }
         else
