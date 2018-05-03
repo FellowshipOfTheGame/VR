@@ -17,9 +17,12 @@ public class LuzesPalco : MonoBehaviour {
 
     public GameObject Power;
 
+    public AudioClip Lightson;
+    bool once = false;
+
     // Use this for initialization
     void Start () {
-        
+       
     }
 	
 	// Update is called once per frame
@@ -42,9 +45,15 @@ public class LuzesPalco : MonoBehaviour {
         if (temEnergia)
         {
             TurnOn();
+            if (!once)
+            {
+                GetComponent<AudioSource>().PlayOneShot(Lightson);
+                once = true;
+            }
         }
         else
         {
+            once = false;
             TurnOff();
         }
 	}

@@ -8,7 +8,9 @@ public class Note : MonoBehaviour {
 	public Image noteImage;
 	public AudioClip pickupSound;
 	public AudioClip putawaySound;
+    public AudioClip fallingSound;
 	public GameObject player;
+    public GameObject vio;
 
     public bool isReady = false;
 
@@ -43,6 +45,8 @@ public class Note : MonoBehaviour {
         if (isReady)
         {
             player.GetComponent<FirstPersonController>().Cair();
+            vio.GetComponent<AudioSource>().Stop();
+            vio.GetComponent<AudioSource>().PlayOneShot(fallingSound);
         }
     }
 
