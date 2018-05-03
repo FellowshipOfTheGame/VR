@@ -9,8 +9,20 @@ public class Run : MonoBehaviour {
     float sx,offset=.04f;
     Vector3 aux;
 	
+    bool isOn;
+
+    void Start () {
+        isOn = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
+
+        if(Input.GetKeyDown(KeyCode.F)){
+            isOn = !isOn;
+        }
+
+        GetComponent<Light> ().enabled = isOn;
         
         if (Input.GetKey(KeyCode.LeftShift)){
             if (dirx == 1){
