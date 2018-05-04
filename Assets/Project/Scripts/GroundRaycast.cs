@@ -22,13 +22,13 @@ public class GroundRaycast : MonoBehaviour {
 
         if (refe != null)
         {
-            print(refe);
+            //print(refe);
             try
             {
                 if (lastTouched != whatIStep.collider.gameObject.tag)
                 {
                     
-                    print("I touched " + whatIStep.collider.gameObject.tag);
+                    //print("I touched " + whatIStep.collider.gameObject.tag);
                 }
             }
             catch (System.Exception) { }
