@@ -13,6 +13,9 @@ public class Run : MonoBehaviour {
 
     void Start () {
         isOn = false;
+        if(transform.parent.gameObject.name == "EstatuaVon"){
+            isOn = true;
+        }
     }
 
 	// Update is called once per frame
