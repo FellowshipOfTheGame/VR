@@ -13,7 +13,7 @@ public class Run : MonoBehaviour {
 
     void Start () {
         isOn = false;
-        if(transform.parent.gameObject.name == "EstatuaVon"){
+        if(transform.parent.gameObject.name == "EstatuaVon" || transform.parent.gameObject.name == "Fonte"){
             isOn = true;
         }
     }
@@ -27,7 +27,7 @@ public class Run : MonoBehaviour {
 
         GetComponent<Light> ().enabled = isOn;
         
-        if (Input.GetKey(KeyCode.LeftShift)){
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)){
             if (dirx == 1){
                 aux = new Vector3(offset,0f,0f);
                 transform.localPosition += aux;
