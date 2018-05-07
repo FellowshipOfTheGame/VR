@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604318076942730}
   - component: {fileID: 108918766176737938}
-  - component: {fileID: 114245643383658962}
+  - component: {fileID: 114091679364491366}
   m_Layer: 0
   m_Name: Lanterna
   m_TagString: Untagged
@@ -78,7 +78,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114245643383658962
+--- !u!114 &114091679364491366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,6 +86,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1020035485544346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1809d04d8d47f4190d8658e318cf01, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b1832cf2fd124442a9ba798f01e2dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
