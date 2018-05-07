@@ -10,6 +10,9 @@ TagManager:
   - Fire
   - Teste
   - Botao
+  - Concreto
+  - Grama
+  - Tronco
   layers:
   - Default
   - TransparentFX
