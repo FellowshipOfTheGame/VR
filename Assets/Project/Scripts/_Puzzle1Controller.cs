@@ -10,10 +10,14 @@ public class _Puzzle1Controller : MonoBehaviour {
 	public bool _isFinished;	// Variável para mostrar se o player já completou ou não o puzzle
 	public bool _isPuzzleActive;
 
+	private Transform _player;
+	private RaycastHit _hit;
+
 	// Use this for initialization
 	void Awake () {
 		_isFinished = false;
 		_isPuzzleActive = false;
+		_mechanism = GetComponentsInChildren<_Puzzle1Component> ();
 		for (int i = 0; i < _mechanism.Length; ++i) {
 			_mechanism [i]._SetRotation (Random.Range (1, 7));
 			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
@@ -23,7 +27,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.E)) {
-			transform.GetComponent<EventTrigger> ().enabled = _isPuzzleActive;
+			GetComponent<EventTrigger> ().enabled = _isPuzzleActive;
 			_ChangePuzzleStatus ();
 		}
 		_CheckIfFinished ();
@@ -47,14 +51,23 @@ public class _Puzzle1Controller : MonoBehaviour {
 		for (int i = 0; i < _mechanism.Length; ++i) {		// abilita/desabilita o evento de passar o mouse por cima dos mecanismos
 			_mechanism [i].GetComponent<EventTrigger> ().enabled = _isPuzzleActive;
 		}
+
+		_player = GameObject.FindGameObjectWithTag ("MainCamera").transform;
+
+		Physics.Raycast (_player.position, _player.forward, out _hit);
+
+		if (_hit.collider.GetComponent<_Puzzle1Component> () != null)
+			_hit.collider.GetComponent<_Puzzle1Component> ().enabled = _isPuzzleActive;
+		if (_hit.collider.GetComponent<_Puzzle1Controller> () == null)
+			_hit.collider.GetComponent<_Puzzle1Controller> ().enabled = _isPuzzleActive;
 		// Aqui precisa de colocar algo com raycast pra habilitar/desabilitar o mecanismo caso o mouse estiver em cima dele quando
 		// o player aperta E (buga tanto quando é pra entrar no puzzle quanto para sair) (o if abaixo só resolve o caso de saída).
 		// Ainda falta arrumar quando o player aperta E para sair do puzzle sem estar olhando para a 'parede', deixando o script ativo
 		// quando deveria estar desativado.
-		if (!_isPuzzleActive) {			// desabilita os mecanismo caso o mouse estivesse em cima de algum quando "saísse" do puzzle
+		/*if (!_isPuzzleActive) {			// desabilita os mecanismo caso o mouse estivesse em cima de algum quando "saísse" do puzzle
 			for (int i = 0; i < _mechanism.Length; ++i) {
 				_mechanism [i].enabled = false;
 			}
-		}
+		}*/
 	}
 }
