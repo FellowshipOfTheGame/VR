@@ -18,7 +18,7 @@ public class LanternaBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(isOnHand){
-            if (Input.GetKey(KeyCode.LeftShift)){
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)){
                 if (dirx == 1){
                     aux = new Vector3(offset,0f,0f);
                     transform.localPosition += aux;
