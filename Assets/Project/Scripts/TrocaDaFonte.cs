@@ -6,7 +6,7 @@ public class TrocaDaFonte : MonoBehaviour {
 	
 	private GameObject estatua;
 	public GameObject fonte;
-
+	private bool changed = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,9 +21,12 @@ public class TrocaDaFonte : MonoBehaviour {
 
 
 	void trocaParafonte(){
-		GetComponent<MeshFilter>().mesh = fonte.GetComponent<MeshFilter>().mesh;
-		// GetComponent<MeshCollider>().sharedMesh = fonte.GetComponent<MeshCollider>().sharedMesh;
-		transform.position += new Vector3(2,2,2);
+		if(!changed){
+			GetComponent<MeshFilter>().mesh = fonte.GetComponent<MeshFilter>().mesh;
+			// GetComponent<MeshCollider>().sharedMesh = fonte.GetComponent<MeshCollider>().sharedMesh;
+			transform.position += new Vector3(2,2,2);
+			changed = true;
+		}
 	}
 
 }
