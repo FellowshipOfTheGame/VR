@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TrocaDaFonte : MonoBehaviour {
 	
-	private GameObject estatua;
-	public GameObject fonte;
-	private bool changed = false;
+	private float count = 0f;
+
+	//public GameObject est;
+	//public GameObject fonte;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,19 +16,33 @@ public class TrocaDaFonte : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.J)){ // debug
+		count += Time.deltaTime;
+
+		if(count < 3){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+		} else if(count > 3.1 && count < 4){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+		} else if(count > 4 && count < 4.1){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+		} else if(count > 4.2 && count < 4.3){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+		} else if(count > 4.4 && count < 4.5){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+		} else if(count > 4.6 && count < 4.7){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+		} else if(count > 6 && count < 7){
+			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
 			trocaParafonte();
+			transform.GetChild(1).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+		} else if(count > 9 && count < 10){
+			transform.GetChild(1).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
 		}
 	}
 
-
 	void trocaParafonte(){
-		if(!changed){
-			GetComponent<MeshFilter>().mesh = fonte.GetComponent<MeshFilter>().mesh;
-			// GetComponent<MeshCollider>().sharedMesh = fonte.GetComponent<MeshCollider>().sharedMesh;
-			transform.position += new Vector3(2,2,2);
-			changed = true;
-		}
+		//Debug.Log("trocando..");
+		transform.GetChild(0).gameObject.SetActive(false);
+		transform.GetChild(1).gameObject.SetActive(true);
 	}
 
 }
