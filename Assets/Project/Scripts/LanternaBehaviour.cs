@@ -10,7 +10,8 @@ public class LanternaBehaviour : MonoBehaviour {
     float x=0,maxx=15;
     float sx,offset=.04f;
     Vector3 aux;
-	
+	public Material mat;
+
     void Start(){
         changeState("on");
     }
@@ -46,18 +47,10 @@ public class LanternaBehaviour : MonoBehaviour {
             }
         }
         else if(Input.GetKeyDown(KeyCode.E)){
-            // GameObject lanterna;
-            isOnHand = true;
-            // changeState("off");
-            // lanterna = Instantiate(gameObject,player.transform.position,player.transform.rotation);
-            // Destroy(gameObject,.2f);
-            transform.parent = player.transform;
-            transform.localPosition = new Vector3(1.7f,.3f,1.7f);
-            transform.localEulerAngles = new Vector3(0f,-9.5f,0f);
-            // changeState("on");
+            pegarLanterna();
         }
 	}
-    void changeState(string s){
+    public void changeState(string s){
         Light l = GetComponent<Light>();
         if(s.Equals("switch")){
             l.enabled = !l.enabled;
@@ -67,6 +60,22 @@ public class LanternaBehaviour : MonoBehaviour {
         }
         else if(s.Equals("off")){
             l.enabled = false;
+        }
+    }
+
+    void pegarLanterna(){
+        if(!isOnHand){
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit)) {    
+                if(Vector3.Distance(hit.point, transform.position) < 3){
+                    GetComponentInChildren<Renderer>().material = mat;
+                    isOnHand = true;
+                    transform.parent = player.transform;
+                    transform.localPosition = new Vector3(1.7f,.3f,1.7f);
+                    transform.localEulerAngles = new Vector3(0f,-9.5f,0f);
+                }
+            }
         }
     }
 

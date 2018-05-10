@@ -5,13 +5,17 @@ using UnityEngine;
 public class TrocaDaFonte : MonoBehaviour {
 	
 	private float count = 0f;
-
+	// Light l;
+	GameObject von,fonte,l;
+	LanternaBehaviour lb;
 	//public GameObject est;
 	//public GameObject fonte;
 
 	// Use this for initialization
 	void Start () {
-		
+		von = transform.Find("EstatuaVon").gameObject;
+		fonte = transform.Find("Fonte").gameObject;
+		lb = transform.Find("Lanterna").gameObject.GetComponent<LanternaBehaviour>();
 	}
 	
 	// Update is called once per frame
@@ -19,30 +23,29 @@ public class TrocaDaFonte : MonoBehaviour {
 		count += Time.deltaTime;
 
 		if(count < 3){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+			lb.changeState("off");
 		} else if(count > 3.1 && count < 4){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+			lb.changeState("on");
 		} else if(count > 4 && count < 4.1){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+			lb.changeState("off");
 		} else if(count > 4.2 && count < 4.3){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+			lb.changeState("on");
 		} else if(count > 4.4 && count < 4.5){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+			lb.changeState("off");
 		} else if(count > 4.6 && count < 4.7){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+			lb.changeState("on");
 		} else if(count > 6 && count < 7){
-			transform.GetChild(0).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
+			lb.changeState("off");
 			trocaParafonte();
-			transform.GetChild(1).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = false;
 		} else if(count > 9 && count < 10){
-			transform.GetChild(1).GetChild(0).gameObject.transform.GetComponent<Light>().enabled = true;
+			lb.changeState("on");
 		}
 	}
 
 	void trocaParafonte(){
 		//Debug.Log("trocando..");
-		transform.GetChild(0).gameObject.SetActive(false);
-		transform.GetChild(1).gameObject.SetActive(true);
+		von.SetActive(false);
+		fonte.SetActive(true);
 	}
 
 }
