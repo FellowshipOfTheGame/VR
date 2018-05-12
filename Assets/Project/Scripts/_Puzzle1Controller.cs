@@ -54,12 +54,16 @@ public class _Puzzle1Controller : MonoBehaviour {
 
 		_player = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 
-		Physics.Raycast (_player.position, _player.forward, out _hit);
+		int layerMask = 1 << 12;
+		Physics.Raycast (_player.position, _player.forward, out _hit, 10, layerMask);
 
-		if (_hit.collider.GetComponent<_Puzzle1Component> () != null)
-			_hit.collider.GetComponent<_Puzzle1Component> ().enabled = _isPuzzleActive;
-		if (_hit.collider.GetComponent<_Puzzle1Controller> () == null)
-			_hit.collider.GetComponent<_Puzzle1Controller> ().enabled = _isPuzzleActive;
+		if (_hit.transform == null) {
+			Debug.Log ("Desativado com o mouse fora do puzzle");
+			this.enabled = _isPuzzleActive;
+		} else if (_hit.transform.GetComponent<_Puzzle1Component> () != null) {
+			Debug.Log ("Puzzle ativado/desativado com mouse no mecanismo");
+			_hit.transform.GetComponent<_Puzzle1Component> ().enabled = _isPuzzleActive;
+		}
 		// Aqui precisa de colocar algo com raycast pra habilitar/desabilitar o mecanismo caso o mouse estiver em cima dele quando
 		// o player aperta E (buga tanto quando é pra entrar no puzzle quanto para sair) (o if abaixo só resolve o caso de saída).
 		// Ainda falta arrumar quando o player aperta E para sair do puzzle sem estar olhando para a 'parede', deixando o script ativo

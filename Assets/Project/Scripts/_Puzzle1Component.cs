@@ -30,7 +30,7 @@ public class _Puzzle1Component : MonoBehaviour {
 
 	public void _SetRotation (int i) {
 		_Rotation = i % 8;
-		transform.eulerAngles = new Vector3 (0, 0, _Rotation * 45);
+		transform.eulerAngles = new Vector3 (0, transform.rotation.eulerAngles.y, _Rotation * 45);
 	}
 
 	public int _GetRotation () {
