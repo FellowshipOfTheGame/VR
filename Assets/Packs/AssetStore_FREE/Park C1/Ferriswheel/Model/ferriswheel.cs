@@ -5,7 +5,7 @@ using UnityEngine;
 public class ferriswheel : MonoBehaviour {
 
     float speed = 15f;
-    bool rotating = false;
+    bool rotating = true;
 
 	// Use this for initialization
 	void Start () {

@@ -14,26 +14,26 @@ public class _Puzzle1Component : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {		// Se clicar com botão esquerdo, vira para esquerda
-			_rotate_left ();
+			_RotateLeft ();
 		} else if (Input.GetMouseButtonDown (1)) {	// Se clicar com botão direito, vira pra direita
-			_rotate_right ();
+			_RotateRight ();
 		}
 	}
 
-	public void _rotate_left () {
-		_set_rotation (_Rotation + 1);
+	public void _RotateLeft () {
+		_SetRotation (_Rotation + 1);
 	}
 
-	public void _rotate_right() {
-		_set_rotation (_Rotation - 1);
+	public void _RotateRight() {
+		_SetRotation (_Rotation - 1);
 	}
 
-	public void _set_rotation (int i) {
+	public void _SetRotation (int i) {
 		_Rotation = i % 8;
-		transform.eulerAngles = new Vector3 (0, 0, _Rotation * 45);
+		transform.eulerAngles = new Vector3 (0, transform.rotation.eulerAngles.y, _Rotation * 45);
 	}
 
-	public int _get_rotation () {
+	public int _GetRotation () {
 		return _Rotation;
 	}
 }
