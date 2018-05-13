@@ -15,7 +15,8 @@ public class TrocaDaFonte : MonoBehaviour {
 	void Start () {
 		von = transform.Find("EstatuaVon").gameObject;
 		fonte = transform.Find("Fonte").gameObject;
-		lb = transform.Find("Lanterna").gameObject.GetComponent<LanternaBehaviour>();
+		//lb = transform.Find("Lanterna").gameObject.GetComponent<LanternaBehaviour>();
+		lb = this.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<LanternaBehaviour>();
 	}
 	
 	// Update is called once per frame
