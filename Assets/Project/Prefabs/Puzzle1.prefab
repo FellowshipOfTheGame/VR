@@ -971,6 +971,7 @@ MonoBehaviour:
   _mechanism: []
   _isFinished: 0
   _isPuzzleActive: 0
+  _maxDistance: 3
 --- !u!135 &135125089721365414
 SphereCollider:
   m_ObjectHideFlags: 1
