@@ -8,6 +8,7 @@ public class _CatController : MonoBehaviour {
 	public float _dist1;
 	public float _dist2;
 	public GameObject[] _waypoints;
+    public GameObject cat;
 	public Transform _player;
 
 	private NavMeshAgent _agent;
@@ -31,7 +32,8 @@ public class _CatController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!_running) {
-			_player_distance = Vector3.Distance (_player.position, transform.position);
+            cat.GetComponent<Animator>().Play("Idle", 0);
+            _player_distance = Vector3.Distance (_player.position, transform.position);
 			//Debug.Log ("_wp_counter % 2: " + (_wp_counter % 2));
 			if (_wp_counter == 0) {			// Caso 1, quando o gato está em baixo do poste piscando
 				if (_player_distance <= _dist1) {	// Se o player chegar perto, o gato vai para as arvores
@@ -45,7 +47,8 @@ public class _CatController : MonoBehaviour {
 				_MoveToNextWp (++_wp_counter, true);
 			}
 		} else {
-			_wp_distance = Vector3.Distance (_waypoints [_wp_counter].transform.position, transform.position);
+            cat.GetComponent<Animator>().Play("walk", 0);
+            _wp_distance = Vector3.Distance (_waypoints [_wp_counter].transform.position, transform.position);
 			if (_wp_distance <= 1)
 				_running = false;
 		}

@@ -39,10 +39,10 @@ public class Sprinter : MonoBehaviour {
 			/*MotionBlurModel.Settings blurSettings = profile.motionBlur.settings;
 			blurSettings.frameBlending = 1;
 			profile.motionBlur.settings = blurSettings;*/
-			profile.motionBlur.enabled = true;
+			//profile.motionBlur.enabled = true;
 		} else {
 			GetComponent<FirstPersonController> ().m_WalkSpeed = 5.0f;
-			profile.motionBlur.enabled = false;
+			//profile.motionBlur.enabled = false;
 		}
 	}
 }
