@@ -60,6 +60,5 @@ public class Menu : MonoBehaviour {
 		 semSangue.SetActive(!temSangue);
 		 comSangue.SetActive(temSangue);
 		 temSangue = !temSangue;
-		 Debug.Log("trocou");
 	 }
 }
