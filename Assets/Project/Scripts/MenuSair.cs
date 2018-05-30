@@ -11,7 +11,7 @@ public class MenuSair : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Mouse0)){
+		if (Input.GetKeyDown(KeyCode.Mouse0)){		// TO DO: adicionar a tecla do controle do VR Box
 			// Sair do jogo
 			Application.Quit();
 		}
