@@ -19,6 +19,7 @@ public class TimelinePlayer : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {   
         pd.Play();
+        Debug.Log("cabou");
 
     }
 }
