@@ -28,7 +28,7 @@ public class GroundRaycast : MonoBehaviour {
                 if (lastTouched != whatIStep.collider.gameObject.tag)
                 {
                     
-                    //print("I touched " + whatIStep.collider.gameObject.tag);
+                    print("I touched " + whatIStep.collider.gameObject.tag);
                 }
             }
             catch (System.Exception) { }
