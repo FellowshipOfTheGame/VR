@@ -143,6 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4813403018294298}
   - component: {fileID: 108167082621369036}
+  - component: {fileID: 114309343679395900}
   m_Layer: 10
   m_Name: Directional light Lixeira F
   m_TagString: Untagged
@@ -174,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4844293261842776}
   - component: {fileID: 108332582407402976}
+  - component: {fileID: 114883463022175566}
   m_Layer: 10
   m_Name: Directional light Lixeira T
   m_TagString: Untagged
@@ -270,8 +272,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1801063460357252}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.956, y: 30.85, z: -5.816}
+  m_LocalRotation: {x: -0, y: -0.37074018, z: -0, w: 0.9287366}
+  m_LocalPosition: {x: 47, y: 10.805, z: 23.310883}
   m_LocalScale: {x: 321.6934, y: 321.69382, z: 321.69363}
   m_Children:
   - {fileID: 4668666781966242}
@@ -280,7 +282,7 @@ Transform:
   - {fileID: 4844293261842776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -43.523003, z: 0}
 --- !u!4 &4762735855375284
 Transform:
   m_ObjectHideFlags: 1
@@ -731,6 +733,18 @@ MonoBehaviour:
   player: {fileID: 0}
   camerahide: {fileID: 1520677870682002}
   inTrash: {fileID: 8300000, guid: 3e227a73d232e9c4dadc97cb6077e55c, type: 3}
+--- !u!114 &114309343679395900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636575455640044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0540a1ccf0b5824983c038e5b1867e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: {fileID: 0}
 --- !u!114 &114579983542332350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -744,6 +758,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 75
   clampAngle: 80
+--- !u!114 &114883463022175566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931558534996366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0540a1ccf0b5824983c038e5b1867e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: {fileID: 0}
 --- !u!124 &124814378981380224
 Behaviour:
   m_ObjectHideFlags: 1
