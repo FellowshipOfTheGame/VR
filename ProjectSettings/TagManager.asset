@@ -13,6 +13,7 @@ TagManager:
   - Concreto
   - Grama
   - Tronco
+  - Madeira
   layers:
   - Default
   - TransparentFX

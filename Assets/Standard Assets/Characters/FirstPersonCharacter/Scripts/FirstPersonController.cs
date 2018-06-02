@@ -58,6 +58,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private int seconds;
 		private Sprinter a;
 		private bool rotating;
+        private String pe;
+        private int b;
         // Use this for initialization
 
 
@@ -209,7 +211,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void PlayFootStepAudio()
+        /*private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
             {
@@ -224,6 +226,39 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
        
+        }*/
+
+        private void PlayFootStepAudio()
+        {
+            pe = GetComponent<GroundRaycast>().Pisado;
+
+            if (!m_CharacterController.isGrounded)
+            {
+                return;
+            }
+            if (pe == "Concreto")
+            {
+                b = 0;
+            }
+            else if (pe == "Grama")
+            {
+                b = 1;
+            }
+            else if (pe == "Madeira" || pe == "Tronco")
+            {
+                b = 2;
+            }
+            else {
+                b = 0;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, m_FootstapSounds[b].Stap.Length);
+            m_AudioSource.clip = m_FootstapSounds[b].Stap[n] ;
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstapSounds[b].Stap[n] = m_FootstapSounds[b].Stap[0] ;
+            m_FootstapSounds[b].Stap[0] = m_AudioSource.clip;
         }
 
 
