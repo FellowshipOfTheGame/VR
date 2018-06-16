@@ -10,6 +10,7 @@ public class Note : MonoBehaviour {
 	public AudioClip putawaySound;
     public AudioClip fallingSound;
 	public GameObject player;
+	public GameObject playerAnd;
     public GameObject vio;
 
     public bool isReady = false;
@@ -30,7 +31,12 @@ public class Note : MonoBehaviour {
         print(noteImage.name);
         if (noteImage.name == "Pag8_Image")
         {
-            player.GetComponent<FirstPersonController>().isClear = true;
+			if (Application.platform == RuntimePlatform.Android){
+				playerAnd.GetComponent<FirstPersonController>().isClear = true;
+			}else{
+				player.GetComponent<FirstPersonController>().isClear = true;
+			}
+            
             isReady = true;
         }
 	}
@@ -38,13 +44,22 @@ public class Note : MonoBehaviour {
 	public void HideNoteImage(){
         noteImage.enabled = false;
 		GetComponent<AudioSource> ().PlayOneShot (putawaySound);
-		player.GetComponent<FirstPersonController> ().enabled = true;
+		if (Application.platform == RuntimePlatform.Android){
+			playerAnd.GetComponent<FirstPersonController> ().enabled = true;
+		}else{
+			player.GetComponent<FirstPersonController> ().enabled = true;
+		}
         //note.GetComponent<MeshRenderer> ().enabled = true;
 
         //cair depois de ler o ultimo note
         if (isReady)
         {
-            player.GetComponent<FirstPersonController>().Cair();
+			if (Application.platform == RuntimePlatform.Android){
+				playerAnd.GetComponent<FirstPersonController>().Cair();
+			} else{
+				player.GetComponent<FirstPersonController>().Cair();
+			}
+            
             vio.GetComponent<AudioSource>().Stop();
             vio.GetComponent<AudioSource>().PlayOneShot(fallingSound);
         }
@@ -52,7 +67,7 @@ public class Note : MonoBehaviour {
 
 	void Update(){
 		if (noteImage.enabled == true) {
-			if (Input.GetKeyDown ("joystick button 1") || Input.GetKeyDown(KeyCode.Mouse1)) {
+			if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("Interact1")) {
 				HideNoteImage ();
 
 			}

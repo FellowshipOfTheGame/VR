@@ -42,11 +42,11 @@ public class LanternaBehaviour : MonoBehaviour {
                 x = 0;
                 transform.localPosition += aux;
             }
-            if(Input.GetKeyDown(KeyCode.F)){
+            if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact2")){
                 changeState("switch");
             }
         }
-        else if(Input.GetKeyDown(KeyCode.E)){
+        else if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact1")){
             pegarLanterna();
         }
 	}

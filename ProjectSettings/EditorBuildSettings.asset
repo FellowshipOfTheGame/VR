@@ -20,9 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Menu.unity
     guid: fe6c5122abdd957469c336e4dc000cde
-  - enabled: 0
+  - enabled: 1
     path: Assets/Project/Scenes/Bosque.unity
     guid: c2c3f2f734dcd6f4698612d74f2ae8af
-  - enabled: 0
+  - enabled: 1
     path: Assets/Project/Scenes/Parque.unity
     guid: 6b2e19cca67051e47aacd9323e6a463b
