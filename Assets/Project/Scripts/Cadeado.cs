@@ -15,8 +15,13 @@ public class Cadeado : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Interact1")){
 			if (chave.GetComponent<Chave>().PlayerHas()){
-				Destroy(transform.gameObject);
+				//Destroy(transform.gameObject);
+				Open();
 			}
 		}
+	}
+
+	private void Open(){
+		transform.GetChild(1).gameObject.transform.Rotate(0, -70f, 0, Space.Self);
 	}
 }
