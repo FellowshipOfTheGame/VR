@@ -766,6 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFinished: 0
+  _finishTime: {x: 3, y: 0}
 --- !u!1 &1148450044
 GameObject:
   m_ObjectHideFlags: 0

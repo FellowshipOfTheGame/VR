@@ -8,21 +8,26 @@ public class _Puzzle2Adjustment : MonoBehaviour {
 
 	private _Puzzle2Pointer _minute;
 	private _Puzzle2Pointer _hour;
+	private _Puzzle2Controller _controller;
 
 	void Start () {
 		_minute = GameObject.Find ("Minute").GetComponent<_Puzzle2Pointer> ();
 		_hour = GameObject.Find ("Hour").GetComponent<_Puzzle2Pointer> ();
 		if (_minute == null || _hour == null)
 			Debug.Log ("ERRO! Não foi possível encontrar os ponteiros do relógio.");
+
+		_controller = transform.GetComponentInParent<_Puzzle2Controller> ();
 	}
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0))
-			_AdjustClock ();
+			_AdjustClock (_minutesAdjust);
 	}
 
-	public void _AdjustClock() {
-		_minute._AdvanceClock (_minutesAdjust);
-		_hour._AdvanceClock (_minutesAdjust);
+	public void _AdjustClock(int _adjustment) {
+		_minute._AdvanceClock (_adjustment);
+		_hour._AdvanceClock (_adjustment);
+
+		_controller._CheckIfComplete ();
 	}
 }

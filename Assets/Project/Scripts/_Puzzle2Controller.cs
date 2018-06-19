@@ -5,14 +5,23 @@ using UnityEngine;
 public class _Puzzle2Controller : MonoBehaviour {
 
 	public bool _isFinished;
+	public Vector2 _finishTime;
 
-//	private _Puzzle2Pointer _pointer;
+	private Vector2 _currentTime;
+	private _Puzzle2Pointer _minute;
+	private _Puzzle2Pointer _hour;
 //	private _Puzzle2Adjustment[] _adjusters;
 
 	// Use this for initialization
 	void Start () {
-//		_pointer = transform.Find ("Minute").GetComponent <_Puzzle2Pointer> ();
 //		_adjusters = GetComponentsInChildren <_Puzzle2Adjustment> ();
+		_minute = GameObject.Find ("Minute").GetComponent <_Puzzle2Pointer> ();
+		_hour = GameObject.Find ("Hour").GetComponent <_Puzzle2Pointer> ();
+
+		_currentTime = new Vector2 (6, 33);		// seta o horário do relógio para 6:33.
+
+		_minute._AdvanceClock ((int)_currentTime.y);
+		_hour._AdvanceClock ((int)(_currentTime.x * 60 + _currentTime.y));
 	}
 	
 	// Update is called once per frame
@@ -21,6 +30,10 @@ public class _Puzzle2Controller : MonoBehaviour {
 	}
 
 	public void _CheckIfComplete() {
+		_currentTime.y = -1 * (int) _minute._GetRotation ();
+		_currentTime.x = -1 * (int) _hour._GetRotation () / (int) 60;
 
+		if (_currentTime == _finishTime)
+			_isFinished = true;
 	}
 }
