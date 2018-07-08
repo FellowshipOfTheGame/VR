@@ -25,9 +25,15 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(!isMenu){
-			f = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+			if (Input.GetAxis("Vertical")>0.01f){
+				Vector3 movement = GameObject.FindGameObjectWithTag("MainCamera").transform.forward * speed * Time.deltaTime;
+				transform.Translate(movement);
+			}
+
+			/* f = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 			s = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-			transform.Translate(s,0,f);
+			transform.Translate(s,0,f); */
 			/*
 			if (Input.GetKeyDown("escape")){
 				if(flag == 0){
