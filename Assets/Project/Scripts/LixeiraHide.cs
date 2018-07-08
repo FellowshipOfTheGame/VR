@@ -35,7 +35,7 @@ public class LixeiraHide : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isHiden == true) {
-			if (Input.GetKeyDown ("joystick button 1") || Input.GetKeyDown (KeyCode.Mouse1)) {
+			if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("Interact1")) {
 				DontHideLixeira ();
 			}
 		}

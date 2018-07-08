@@ -70,17 +70,17 @@ public class PlayerRaycasting : MonoBehaviour {
 				}
 			} else if (refe.tag == "Note") {
 				refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
-				if ((Input.GetKeyDown ("joystick button 2") || Input.GetKeyDown (KeyCode.Mouse0)) && refe.GetComponent<Note> ().noteImage.enabled != true) {
+				if ((Input.GetKeyDown (KeyCode.Mouse0) || Input.GetButtonDown("Interact1")) && refe.GetComponent<Note> ().noteImage.enabled != true) {
 					refe.GetComponent<Note> ().ShowNoteImage ();
 				}
 			} else if (refe.tag == "Lixeira") {
 				//refe.GetComponent<Renderer> ().material.SetFloat ("_Outline", 0.005f);
-				if ((Input.GetKeyDown ("joystick button 2") || Input.GetKeyDown (KeyCode.Mouse0))){
+				if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Interact1")){
 					refe.GetComponent<LixeiraHide> ().HideLixeira();
 				}
 			} else if (refe.tag == "Botao")
             {
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.K))
                 {
                     refe.GetComponent<BotoesLigacao>().Press();
                 }
