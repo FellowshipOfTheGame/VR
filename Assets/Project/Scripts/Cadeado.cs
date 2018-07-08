@@ -22,6 +22,6 @@ public class Cadeado : MonoBehaviour {
 	}
 
 	private void Open(){
-		transform.GetChild(1).gameObject.transform.Rotate(0, -70f, 0, Space.Self);
+		transform.GetChild(1).gameObject.transform.Rotate(0, -75f, 0, Space.Self);
 	}
 }
