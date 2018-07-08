@@ -5,10 +5,11 @@ using UnityEngine;
 public class Cadeado : MonoBehaviour {
 
 	public GameObject chave;
+	private bool abriu;
 
 	// Use this for initialization
 	void Start () {
-		
+		abriu = false;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +23,9 @@ public class Cadeado : MonoBehaviour {
 	}
 
 	private void Open(){
-		transform.GetChild(1).gameObject.transform.Rotate(0, -75f, 0, Space.Self);
+		if (!abriu){
+			transform.GetChild(1).gameObject.transform.Rotate(0, -75f, 0, Space.Self);
+			abriu = true;
+		}
 	}
 }
