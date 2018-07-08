@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4604318076942730}
   - component: {fileID: 108918766176737938}
-  - component: {fileID: 114091679364491366}
+  - component: {fileID: 114771217958417458}
   m_Layer: 0
   m_Name: Lanterna
   m_TagString: Untagged
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693001108110344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4604318076942730}
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020035485544346}
   m_LocalRotation: {x: -0.072843015, y: 0.4996462, z: 0.86212844, w: 0.04221614}
-  m_LocalPosition: {x: 1, y: 0.1, z: -6.81}
+  m_LocalPosition: {x: 0.12795258, y: 1.9279709, z: -2.3147507}
   m_LocalScale: {x: 0.5815957, y: 0.81207407, z: 0.8120742}
   m_Children:
   - {fileID: 4180597909225960}
@@ -147,7 +147,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114091679364491366
+--- !u!114 &114771217958417458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -159,4 +159,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  mat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  mat: {fileID: 2100000, guid: ca9777921e2908e4b8f60eb6a1913761, type: 2}

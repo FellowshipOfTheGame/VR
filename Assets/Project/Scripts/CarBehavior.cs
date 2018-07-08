@@ -8,12 +8,16 @@ public class CarBehavior : MonoBehaviour {
     public GameObject Cercas;
     public GameObject PlayerCamera;
     public GameObject Player;
-    public GameObject EscapeBridgeBorder;
+    //public GameObject EscapeBridgeBorder;
     public float distance;
     private Vector3 InitialPos;
     public Vector3 currentPos;
+    
+    private GameObject luz1, luz2;
     void Start () {
         InitialPos = transform.position;
+        luz1 = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        luz2 = this.gameObject.transform.GetChild(0).GetChild(1).gameObject;
 	}
 
     void Update()
@@ -39,9 +43,10 @@ public class CarBehavior : MonoBehaviour {
         PlayerCamera.SetActive(false);
         Cercas.SetActive(false);
         gameObject.GetComponent<HoverCarControl>().enabled = true;
-        EscapeBridgeBorder.SetActive(false);
+        //EscapeBridgeBorder.SetActive(false);
         
-
+        luz1.SetActive(true);
+        luz2.SetActive(true);
     }
 
     private void ExitCar()
@@ -50,9 +55,11 @@ public class CarBehavior : MonoBehaviour {
         CarCamera.SetActive(false);
         Cercas.SetActive(true);
         gameObject.GetComponent<HoverCarControl>().enabled = false;
-        EscapeBridgeBorder.SetActive(true);
+        //EscapeBridgeBorder.SetActive(true);
         transform.position = InitialPos;
 
+        luz1.SetActive(false);
+        luz2.SetActive(false);
     }
         private void DetectPlayer()
     {
