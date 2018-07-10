@@ -17,7 +17,9 @@ public class ferriswheel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        setRotating(control.IsOn());
+        if(control.IsOn() != rotating){
+            setRotating(control.IsOn());
+        }
 
         if (rotating)
         {
@@ -27,6 +29,8 @@ public class ferriswheel : MonoBehaviour {
 
     void setRotating(bool rotating)
     {
+        if (transform.GetComponent<AudioSource>().isPlaying) transform.GetComponent<AudioSource>().Stop();
+        else transform.GetComponent<AudioSource>().Play();
         this.rotating = rotating;
     }
 }
