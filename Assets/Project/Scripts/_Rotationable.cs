@@ -35,7 +35,7 @@ public class _Rotationable : MonoBehaviour {
 		Debug.Log ("ticksPerLoop: " + _ticksPerLoop + ", degreesPerTick: " + _degreesPerTick);
 		_rotation = i % _ticksPerLoop;
 	//	_rotacao = transform.rotation;
-		transform.eulerAngles = new Vector3 (0, transform.rotation.eulerAngles.y, _rotation * _degreesPerTick);
+		transform.localEulerAngles = new Vector3 (0, _rotation * _degreesPerTick, 0);
 		//_Rotate (_rotation < i);
 	}
 

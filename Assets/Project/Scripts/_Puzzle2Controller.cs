@@ -6,7 +6,9 @@ public class _Puzzle2Controller : MonoBehaviour {
 
 	public bool _isFinished;
 	public Vector2 _finishTime;
+	public GameObject _key;
 
+	private GameObject _spawnPoint;
 	private Vector2 _currentTime;
 	private _Puzzle2Pointer _minute;
 	private _Puzzle2Pointer _hour;
@@ -17,6 +19,7 @@ public class _Puzzle2Controller : MonoBehaviour {
 //		_adjusters = GetComponentsInChildren <_Puzzle2Adjustment> ();
 		_minute = GameObject.Find ("Minute").GetComponent <_Puzzle2Pointer> ();
 		_hour = GameObject.Find ("Hour").GetComponent <_Puzzle2Pointer> ();
+		_spawnPoint = GameObject.Find ("SpawnPoint");
 
 		_currentTime = new Vector2 (6, 33);		// seta o horário do relógio para 6:33.
 
@@ -34,6 +37,11 @@ public class _Puzzle2Controller : MonoBehaviour {
 		_currentTime.x = -1 * (int) _hour._GetRotation () / (int) 60;
 
 		if (_currentTime == _finishTime)
-			_isFinished = true;
+			_FinishPuzzle ();
+	}
+
+	public void _FinishPuzzle() {
+		_isFinished = true;
+		Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);
 	}
 }
