@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 
 public class TimelinePlayer : MonoBehaviour {
     
+	public GameObject cameraMae, player;
     
     public PlayableDirector pd;
 	// Use this for initialization
@@ -16,9 +17,13 @@ public class TimelinePlayer : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnTriggerEnter(Collider other)
-    {   
-        pd.Play();
 
+    private void OnTriggerStay(Collider other)
+    {   
+        if(Input.GetKeyDown(KeyCode.P)){
+			player.SetActive(false);
+			cameraMae.SetActive(true);
+			pd.Play();
+		}
     }
 }
