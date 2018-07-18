@@ -66,7 +66,7 @@ public class PostesController : MonoBehaviour {
         //print(childCount);
     }
 
-    void turnOff()
+    public void turnOff()
     {
         for (int i = 0; i < childCount; i++)
         {
@@ -77,7 +77,7 @@ public class PostesController : MonoBehaviour {
         isOn = false;
     }
 
-    void turnOn()
+    public void turnOn()
     {
         for (int i = 0; i < childCount; i++)
         {
