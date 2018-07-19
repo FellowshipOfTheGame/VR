@@ -7,6 +7,7 @@ public class _Puzzle2Controller : MonoBehaviour {
 	public bool _isFinished;
 	public Vector2 _finishTime;
 	public GameObject _key;
+	public GameObject _power;
 
 	private GameObject _spawnPoint;
 	private Vector2 _currentTime;
@@ -30,6 +31,10 @@ public class _Puzzle2Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public bool hasEnergy(){
+		return _power.GetComponent<EnergyController>().IsOn();
 	}
 
 	public void _CheckIfComplete() {

@@ -20,8 +20,10 @@ public class _Puzzle2Adjustment : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetMouseButtonDown (0))
-			_AdjustClock (_minutesAdjust);
+		if (_controller.hasEnergy()){
+			if (Input.GetMouseButtonDown (0))
+				_AdjustClock (_minutesAdjust);
+		}
 	}
 
 	public void _AdjustClock(int _adjustment) {

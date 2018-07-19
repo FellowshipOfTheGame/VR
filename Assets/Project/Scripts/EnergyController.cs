@@ -24,6 +24,11 @@ public class EnergyController : MonoBehaviour {
         isOn = !isOn;
     }
 
+    public void turnOn()
+    {
+        isOn = true;
+    }
+
     public bool IsOn()
     {
         return isOn;

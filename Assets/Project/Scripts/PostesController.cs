@@ -21,7 +21,7 @@ public class PostesController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
+        
         try
         {
             if (power.GetComponent<EnergyController>().IsOn())
@@ -34,7 +34,7 @@ public class PostesController : MonoBehaviour {
             }
         }
         catch { }
-        */
+        
 	}
 
     void getChildren()
