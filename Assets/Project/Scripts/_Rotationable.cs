@@ -32,7 +32,7 @@ public class _Rotationable : MonoBehaviour {
 	}
 
 	public void _SetRotation (int i) {
-//		Debug.Log ("ticksPerLoop: " + _ticksPerLoop + ", degreesPerTick: " + _degreesPerTick);
+		Debug.Log ("ticksPerLoop: " + _ticksPerLoop + ", degreesPerTick: " + _degreesPerTick);
 		_rotation = i % _ticksPerLoop;
 	//	_rotacao = transform.rotation;
 		transform.localEulerAngles = new Vector3 (transform.localEulerAngles.x, _rotation * _degreesPerTick, 0);

@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 114998777967043582}
   - component: {fileID: 114043831133589370}
   m_Layer: 0
-  m_Name: Puzzle1
+  m_Name: Puzzle1_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114390241468073794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -772,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114532520249036846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -783,6 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114575041605176536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114600993695664870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -852,6 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114823192059703710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -957,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45833e9ac472891498b1f75dd3286f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberOfTicks: 0
 --- !u!114 &114998777967043582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -970,8 +976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mechanism: []
   _isFinished: 0
-  _isPuzzleActive: 0
   _maxDistance: 3
+  _luzPostes: {fileID: 0}
 --- !u!135 &135125089721365414
 SphereCollider:
   m_ObjectHideFlags: 1
