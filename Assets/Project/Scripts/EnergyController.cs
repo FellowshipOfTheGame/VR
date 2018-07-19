@@ -13,7 +13,7 @@ public class EnergyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Interact3"))
         {
             PowerSwitch();
         }

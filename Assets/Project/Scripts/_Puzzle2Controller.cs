@@ -42,6 +42,9 @@ public class _Puzzle2Controller : MonoBehaviour {
 
 	public void _FinishPuzzle() {
 		_isFinished = true;
-		Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);
+		Vector3 pos = _spawnPoint.transform.position;
+		_key.transform.position = pos;
+		//Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);
+
 	}
 }
