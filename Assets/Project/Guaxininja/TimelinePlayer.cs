@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 
 public class TimelinePlayer : MonoBehaviour {
     
+	public GameObject cameraMae, player;
     
     public PlayableDirector pd;
     public PlayState currstate;
@@ -24,6 +25,7 @@ public class TimelinePlayer : MonoBehaviour {
         CheckState();
         LockPlayer();
 	}
+<<<<<<< HEAD
     private void CheckState()
     {
         if (pd.state==PlayState.Playing && currstate!=pd.state)
@@ -36,6 +38,16 @@ public class TimelinePlayer : MonoBehaviour {
             Debug.Log("pausado");
             currstate = pd.state;
         }
+=======
+
+    private void OnTriggerStay(Collider other)
+    {   
+        if(Input.GetKeyDown(KeyCode.P)){
+			player.SetActive(false);
+			cameraMae.SetActive(true);
+			pd.Play();
+		}
+>>>>>>> 750b9ea7d8636667fc3889c86a0cce9c37a1bdc7
     }
     private void LockPlayer()
     {
