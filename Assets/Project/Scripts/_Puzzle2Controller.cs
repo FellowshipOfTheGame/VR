@@ -52,4 +52,8 @@ public class _Puzzle2Controller : MonoBehaviour {
 		//Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);
 
 	}
+
+	public bool isFinished(){
+		return _isFinished;
+	}
 }
