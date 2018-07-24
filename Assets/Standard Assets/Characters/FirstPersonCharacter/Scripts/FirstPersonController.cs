@@ -7,8 +7,15 @@ using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [RequireComponent(typeof (CharacterController))]
-    [RequireComponent(typeof (AudioSource))]
+    [System.Serializable]
+    public class MultiDimensionalInt
+    {
+        public AudioClip[] Stap;
+    }
+
+
+    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
         private GameObject loader;
@@ -32,7 +39,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
-		//public GameObject Player;
+        [SerializeField] private MultiDimensionalInt[] m_FootstapSounds;
+        
+        //public GameObject Player;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -51,6 +60,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private int seconds;
 		private Sprinter a;
 		private bool rotating;
+        private String pe;
+        private int b;
         // Use this for initialization
 
 
@@ -208,7 +219,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void PlayFootStepAudio()
+        /*private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
             {
@@ -222,6 +233,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
+       
+        }*/
+
+        private void PlayFootStepAudio()
+        {
+            pe = GetComponent<GroundRaycast>().Pisado;
+
+            if (!m_CharacterController.isGrounded)
+            {
+                return;
+            }
+            if (pe == "Concreto")
+            {
+                b = 0;
+            }
+            else if (pe == "Grama")
+            {
+                b = 1;
+            }
+            else if (pe == "Madeira" || pe == "Tronco")
+            {
+                b = 2;
+            }
+            else {
+                b = 0;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, m_FootstapSounds[b].Stap.Length);
+            m_AudioSource.clip = m_FootstapSounds[b].Stap[n] ;
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstapSounds[b].Stap[n] = m_FootstapSounds[b].Stap[0] ;
+            m_FootstapSounds[b].Stap[0] = m_AudioSource.clip;
         }
 
 
