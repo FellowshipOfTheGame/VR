@@ -15,7 +15,7 @@ public class EnergyController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Interact3"))
         {
-            PowerSwitch();
+            //PowerSwitch();
         }
 	}
 

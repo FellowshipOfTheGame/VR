@@ -234,8 +234,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476204768112898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90, y: 15, z: 13}
+  m_LocalRotation: {x: -0, y: 0.66220206, z: -0, w: 0.74932534}
+  m_LocalPosition: {x: 20.9, y: 33.34921, z: -12.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4077937269636028}
@@ -244,7 +244,7 @@ Transform:
   - {fileID: 4087066969686478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 82.936005, z: 0}
 --- !u!20 &20006182350423700
 Camera:
   m_ObjectHideFlags: 1
@@ -501,7 +501,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1348544935139336}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f546bd39cf5b24f48b45252e6bcf9347, type: 3}
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceGround: 2
   Vio: {fileID: 1242865780899462}
+  Pisado: 
   Violin: {fileID: 8300000, guid: 6613809225b4468469e773b696656f52, type: 3}
   groot: 0
 --- !u!114 &114110091265707576
@@ -890,6 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MovementEnabled: 0
   m_IsWalking: 0
   m_WalkSpeed: 5
   m_RunSpeed: 10
@@ -979,8 +981,22 @@ MonoBehaviour:
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 8300000, guid: 5ca51b9afe2e15f47a25572240800139, type: 3}
+  - {fileID: 8300000, guid: b1a16735ff4ec5a479317788175aa629, type: 3}
+  - {fileID: 8300000, guid: 4f23f2f1a399cb84396b51ba040cbc39, type: 3}
+  - {fileID: 8300000, guid: fa40af6f4219ba444b515cac86578c76, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_FootstapSounds:
+  - Stap:
+    - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+    - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - Stap:
+    - {fileID: 8300000, guid: 5ca51b9afe2e15f47a25572240800139, type: 3}
+    - {fileID: 8300000, guid: b1a16735ff4ec5a479317788175aa629, type: 3}
+  - Stap:
+    - {fileID: 8300000, guid: 4f23f2f1a399cb84396b51ba040cbc39, type: 3}
+    - {fileID: 8300000, guid: fa40af6f4219ba444b515cac86578c76, type: 3}
   cameraLocked: 0
   isClear: 0
   isScene1: 1
