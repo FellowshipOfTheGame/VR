@@ -13,7 +13,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 	public float _maxDistance;
 	public PostesController _luzPostes;
 
-	private FirstPersonController _player;
+//	private FirstPersonController _player;
 	private Transform _camera;
 	private RaycastHit _hit;
 
@@ -23,7 +23,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 //		_isPuzzleActive = false;
 		_mechanism = GetComponentsInChildren<_Puzzle1Component> ();
 		_camera = GameObject.FindGameObjectWithTag ("MainCamera").transform;
-		_player = GameObject.FindGameObjectWithTag ("Player").GetComponent<FirstPersonController> ();
+//		_player = GameObject.FindGameObjectWithTag ("Player").GetComponent<FirstPersonController> ();
 
 		for (int i = 0; i < _mechanism.Length; ++i) {
 			_mechanism [i]._SetRotation (Random.Range (1, 7));
