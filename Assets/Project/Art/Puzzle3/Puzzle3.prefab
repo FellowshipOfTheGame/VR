@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4422270393023276}
   - component: {fileID: 33288934036542826}
   - component: {fileID: 23704956707102186}
+  - component: {fileID: 136119804107457280}
+  - component: {fileID: 114836421903477496}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -1152,6 +1154,36 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _currentNumber: 0
+--- !u!114 &114836421903477496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064008423013066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114736203118802648}
+          m_MethodName: OpenTheDoor
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114846710307900406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1180,3 +1212,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _currentNumber: 0
+--- !u!136 &136119804107457280
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064008423013066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0013586191
+  m_Height: 0.003889593
+  m_Direction: 1
+  m_Center: {x: 0.02341222, y: 0.0015810974, z: 0.009086135}
