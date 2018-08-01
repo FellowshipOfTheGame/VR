@@ -13,8 +13,9 @@ public class _Puzzle1Controller : MonoBehaviour {
 	public float _maxDistance;
 //	public PostesController _luzPostes;
 	public EnergyController _energy;
+    public AudioClip spark;
 
-	private FirstPersonController _player;
+    private FirstPersonController _player;
 	private Transform _camera;
 	private RaycastHit _hit;
 
@@ -30,6 +31,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 			_mechanism [i]._SetRotation (Random.Range (1, 7));
 //			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
 		}
+        GetComponent<AudioSource>().Play();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +50,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 			}
 		}
 
+        GetComponent<AudioSource>().Stop();
 		// Se ainda não saiu da função, então é porque o puzzle já está finalizado
 		Debug.Log("TERMINOU");
 		if (_energy != null)
