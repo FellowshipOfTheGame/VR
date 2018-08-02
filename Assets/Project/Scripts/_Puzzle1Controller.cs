@@ -14,10 +14,12 @@ public class _Puzzle1Controller : MonoBehaviour {
 //	public PostesController _luzPostes;
 	public EnergyController _energy;
     public AudioClip spark;
+    public GameObject Wall; 
 
     private FirstPersonController _player;
 	private Transform _camera;
 	private RaycastHit _hit;
+    private double _walltime;
 
 	// Use this for initialization
 	void Awake () {
@@ -41,6 +43,13 @@ public class _Puzzle1Controller : MonoBehaviour {
 			_ChangePuzzleStatus ();
 		}
 */		_CheckIfFinished ();
+        _walltime += Time.deltaTime;
+      // print(_walltime);
+        if (_walltime >= 7.0f && _isFinished == false)
+        {
+            _walltime = 0;
+            Wall.GetComponent<AudioSource>().Play();
+        }
 	}
 
 	public void _CheckIfFinished() {		// Confere se todos os mecanismos estão com rotação 0 (posição correta)
