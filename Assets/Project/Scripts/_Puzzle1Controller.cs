@@ -11,7 +11,8 @@ public class _Puzzle1Controller : MonoBehaviour {
 	public bool _isFinished;	// Variável para mostrar se o player já completou ou não o puzzle
 //	public bool _isPuzzleActive;
 	public float _maxDistance;
-	public PostesController _luzPostes;
+//	public PostesController _luzPostes;
+	public EnergyController _energy;
 
 //	private FirstPersonController _player;
 	private Transform _camera;
@@ -48,8 +49,9 @@ public class _Puzzle1Controller : MonoBehaviour {
 		}
 
 		// Se ainda não saiu da função, então é porque o puzzle já está finalizado
-		if (_luzPostes != null)
-			_luzPostes.turnOn ();
+		Debug.Log("TERMINOU");
+		if (_energy != null)
+			_energy.turnOn ();
 		_isFinished = true;
 		this.enabled = false;		// Desabilita este script e o event trigger quando completa o puzzle
 		transform.GetComponent<EventTrigger> ().enabled = false;

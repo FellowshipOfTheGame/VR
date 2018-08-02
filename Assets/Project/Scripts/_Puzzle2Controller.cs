@@ -7,6 +7,7 @@ public class _Puzzle2Controller : MonoBehaviour {
 	public bool _isFinished;
 	public Vector2 _finishTime;
 	public GameObject _key;
+	public GameObject _power;
 
 	private GameObject _spawnPoint;
 	private Vector2 _currentTime;
@@ -32,6 +33,10 @@ public class _Puzzle2Controller : MonoBehaviour {
 		
 	}
 
+	public bool hasEnergy(){
+		return _power.GetComponent<EnergyController>().IsOn();
+	}
+
 	public void _CheckIfComplete() {
 		_currentTime.y = -1 * (int) _minute._GetRotation ();
 		_currentTime.x = -1 * (int) _hour._GetRotation () / (int) 60;
@@ -46,5 +51,9 @@ public class _Puzzle2Controller : MonoBehaviour {
 		_key.transform.position = pos;
 		//Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);
 
+	}
+
+	public bool isFinished(){
+		return _isFinished;
 	}
 }

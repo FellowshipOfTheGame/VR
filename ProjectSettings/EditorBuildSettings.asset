@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Parque.unity
     guid: 6b2e19cca67051e47aacd9323e6a463b
+  - enabled: 1
+    path: Assets/Project/Scenes/Escritorio.unity
+    guid: 93160506ad145604aa23a95a0f42af91

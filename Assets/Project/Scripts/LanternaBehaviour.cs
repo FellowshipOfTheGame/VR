@@ -72,7 +72,7 @@ public class LanternaBehaviour : MonoBehaviour {
                     GetComponentInChildren<Renderer>().material = mat;
                     isOnHand = true;
                     transform.parent = player.transform;
-                    transform.localPosition = new Vector3(1.7f,.3f,1.7f);
+                    transform.localPosition = new Vector3(1.7f,-0.8f,1.7f);
                     transform.localEulerAngles = new Vector3(0f,-9.5f,0f);
                 }
             }
