@@ -14,6 +14,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 //	public PostesController _luzPostes;
 	public EnergyController _energy;
     public AudioClip spark;
+    public AudioClip holofote;
     public GameObject Wall; 
 
     private FirstPersonController _player;
@@ -64,6 +65,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 		Debug.Log("TERMINOU");
 		if (_energy != null)
 			_energy.turnOn ();
+        GetComponent<AudioSource>().PlayOneShot(holofote);
 		_isFinished = true;
 		this.enabled = false;		// Desabilita este script e o event trigger quando completa o puzzle
 		transform.GetComponent<EventTrigger> ().enabled = false;

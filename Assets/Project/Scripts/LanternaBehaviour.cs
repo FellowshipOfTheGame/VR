@@ -11,6 +11,8 @@ public class LanternaBehaviour : MonoBehaviour {
     float sx,offset=.04f;
     Vector3 aux;
 	public Material mat;
+    public AudioClip liga;
+    public AudioClip desliga;
 
     void Start(){
         changeState("on");
@@ -44,10 +46,16 @@ public class LanternaBehaviour : MonoBehaviour {
             }
             if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact2")){
                 changeState("switch");
+                Light l = GetComponent<Light>();
+                if (l.enabled)
+                    GetComponent<AudioSource>().PlayOneShot(liga);
+                else
+                    GetComponent<AudioSource>().PlayOneShot(desliga);
             }
         }
         else if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact1")){
             pegarLanterna();
+            GetComponent<AudioSource>().PlayOneShot(liga);
         }
 	}
     public void changeState(string s){
