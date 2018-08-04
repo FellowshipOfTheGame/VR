@@ -35,7 +35,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 			_mechanism [i].Initialize();
 
 			int Number = Random.Range (1, 7);
-			Debug.Log(Number);
+			//Debug.Log(Number);
 			_mechanism [i]._SetRotation (Number);
 //			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
 		}
