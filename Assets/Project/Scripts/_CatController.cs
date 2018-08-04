@@ -40,7 +40,7 @@ public class _CatController : MonoBehaviour {
 					_MoveToNextWp (++_wp_counter, false);
 				}
 			} else if ((_wp_counter % 2) == 1) {	// Caso 2 (waypoints ímpar), quando o gato espera o player atras da arvore
-				if (_player_distance <= _dist1) { 	// Se o player chegar perto, o gato vai para as arvores
+				if (_player_distance <= _dist2) { 	// Se o player chegar perto, o gato vai para as arvores
 					_MoveToNextWp (++_wp_counter, false);
 				}
 			} else {						// Caso 3 (waypoint par), quando o gato é teletransportado para a proxima arvore
