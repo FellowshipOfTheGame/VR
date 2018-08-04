@@ -8,10 +8,10 @@ public class _Puzzle1Component : _Rotationable {
     public AudioClip click;
 
 	// Use this for initialization
-	void Awake () {
+/* 	void Awake () {
 		_numberOfTicks = 8;
 		_SetTicksPerLoop (_numberOfTicks);
-	}
+	} */
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,6 +30,11 @@ public class _Puzzle1Component : _Rotationable {
 
 	public void _RotateRight() {
 		_SetRotation (_rotation - 1);
+	}
+
+	public void Initialize () {
+		_numberOfTicks = 8;
+		_SetTicksPerLoop (_numberOfTicks);
 	}
 
 }

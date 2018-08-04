@@ -44,7 +44,7 @@ public class LanternaBehaviour : MonoBehaviour {
                 x = 0;
                 transform.localPosition += aux;
             }
-            if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact2")){
+            if(Input.GetKeyDown(KeyCode.F)){
                 changeState("switch");
                 Light l = GetComponent<Light>();
                 if (l.enabled)

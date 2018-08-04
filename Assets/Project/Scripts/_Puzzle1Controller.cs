@@ -31,7 +31,12 @@ public class _Puzzle1Controller : MonoBehaviour {
 //		_player = GameObject.FindGameObjectWithTag ("Player").GetComponent<FirstPersonController> ();
 
 		for (int i = 0; i < _mechanism.Length; ++i) {
-			_mechanism [i]._SetRotation (Random.Range (1, 7));
+			
+			_mechanism [i].Initialize();
+
+			int Number = Random.Range (1, 7);
+			Debug.Log(Number);
+			_mechanism [i]._SetRotation (Number);
 //			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
 		}
         GetComponent<AudioSource>().Play();
