@@ -12,6 +12,7 @@ public class CarBehavior : MonoBehaviour {
     public float distance;
     private Vector3 InitialPos;
     public Vector3 currentPos;
+    private int i = 0;
     
     private GameObject luz1, luz2;
     void Start () {
@@ -44,11 +45,15 @@ public class CarBehavior : MonoBehaviour {
         Cercas.SetActive(false);
         gameObject.GetComponent<HoverCarControl>().enabled = true;
         //EscapeBridgeBorder.SetActive(false);
-        
+
         luz1.SetActive(true);
         luz2.SetActive(true);
+        if (i == 0)
+        {
+            GetComponent<AudioSource>().Play();
+            i++;
+        }
     }
-
     private void ExitCar()
     {
         PlayerCamera.SetActive(true);
@@ -57,21 +62,24 @@ public class CarBehavior : MonoBehaviour {
         gameObject.GetComponent<HoverCarControl>().enabled = false;
         //EscapeBridgeBorder.SetActive(true);
         transform.position = InitialPos;
-
+        i = 0;
         luz1.SetActive(false);
         luz2.SetActive(false);
     }
         private void DetectPlayer()
     {
-        if (Vector3.Distance(PlayerCamera.transform.position, transform.position) <= 10 && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact1")))
+        if (Vector3.Distance(PlayerCamera.transform.position, transform.position) <= 7 && Input.GetKeyDown(KeyCode.E))
         {
             InsideCar = true;
         }
-        if(InsideCar==true && (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact1")))
+        if(InsideCar==true && (Input.GetKeyDown(KeyCode.R)))
         {
             Player.transform.position = currentPos;
             InsideCar = false;
         }
+
+        GetComponent<AudioSource>().Stop();
+
     }
 
 

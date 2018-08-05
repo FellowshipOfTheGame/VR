@@ -18,8 +18,8 @@ public class _Puzzle3Controller : MonoBehaviour {
     void Awake() {
 		for (int i = 0; i < _numbers.Length; ++i)
 			_numbers [i] = Resources.Load <Material> ("Materials/Number" + i);
-		for (int i = 0; i < _display.Length; ++i)
-			_display [i] = GameObject.Find ("DigitDisplay" + i).GetComponent<_Puzzle3Display> ();
+		//for (int i = 0; i < _display.Length; ++i)
+		//	_display [i] = GameObject.Find ("DigitDisplay" + i).GetComponent<_Puzzle3Display> ();
 
 		_animator = GetComponentInChildren<Animator> ();
     }
@@ -45,6 +45,7 @@ public class _Puzzle3Controller : MonoBehaviour {
 
 	public void OpenTheDoor() {
 		if (_passcodeIsCorrect) {
+            GetComponent<AudioSource>().Play();
 			_isFinished = true;
 			_animator.SetTrigger ("Open");
 

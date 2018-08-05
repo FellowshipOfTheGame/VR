@@ -14,7 +14,8 @@ public class Chave : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Interact1")){
-			GetKey();
+            GetComponent<AudioSource>().Play();
+            GetKey();
 		}
 	}
 

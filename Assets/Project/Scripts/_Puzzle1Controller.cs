@@ -31,7 +31,12 @@ public class _Puzzle1Controller : MonoBehaviour {
 //		_player = GameObject.FindGameObjectWithTag ("Player").GetComponent<FirstPersonController> ();
 
 		for (int i = 0; i < _mechanism.Length; ++i) {
-			_mechanism [i]._SetRotation (Random.Range (1, 7));
+			
+			_mechanism [i].Initialize();
+
+			int Number = Random.Range (1, 7);
+			//Debug.Log(Number);
+			_mechanism [i]._SetRotation (Number);
 //			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
 		}
         GetComponent<AudioSource>().Play();
@@ -49,7 +54,7 @@ public class _Puzzle1Controller : MonoBehaviour {
         if (_walltime >= 7.0f && _isFinished == false)
         {
             _walltime = 0;
-            Wall.GetComponent<AudioSource>().Play();
+            //Wall.GetComponent<AudioSource>().Play();
         }
 	}
 
@@ -67,9 +72,9 @@ public class _Puzzle1Controller : MonoBehaviour {
 			_energy.turnOn ();
         GetComponent<AudioSource>().PlayOneShot(holofote);
 		_isFinished = true;
-		this.enabled = false;		// Desabilita este script e o event trigger quando completa o puzzle
 		transform.GetComponent<EventTrigger> ().enabled = false;
 		_DeactivatePuzzle ();
+		this.enabled = false;		// Desabilita este script e o event trigger quando completa o puzzle
 	}
 
 	public void _DeactivatePuzzle() {					// Ativa e desativa o puzzle
@@ -84,7 +89,11 @@ public class _Puzzle1Controller : MonoBehaviour {
 
 		if (_hit.transform == null)		// Caso não colida com nada, o player estava olhando para fora do puzzle
 			this.enabled = false;	// então desativa o puzzle manualmente...
-		else if (_hit.transform.GetComponent<_Puzzle1Component> () != null)	// Caso esteja olhando para um mecanismo
-			_hit.transform.GetComponent<_Puzzle1Component> ().enabled = false;	// ativa/desativa ele manualmente
+		else{
+			Debug.Log(_hit.transform.name);
+			if (_hit.transform.GetComponent<_Puzzle1Component> () != null) // Caso esteja olhando para um mecanismo
+				_hit.transform.GetComponent<_Puzzle1Component> ().enabled = false;	// ativa/desativa ele manualmente
+		}
 	}
+
 }
