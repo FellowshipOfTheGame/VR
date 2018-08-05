@@ -7,17 +7,19 @@ public class ferriswheel : MonoBehaviour {
     float speed = 15f;
     bool rotating = false;
 
-    public GameObject power;
-    private EnergyController control;
+    public GameObject switcher;
+    private rodaSwitcher control;
 
 	// Use this for initialization
 	void Start () {
-		control = power.GetComponent<EnergyController>();
+		control = switcher.GetComponent<rodaSwitcher>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        setRotating(control.IsOn());
+        if(control.IsOn() != rotating){
+            setRotating(control.IsOn());
+        }
 
         if (rotating)
         {
@@ -27,6 +29,8 @@ public class ferriswheel : MonoBehaviour {
 
     void setRotating(bool rotating)
     {
+        if (transform.GetComponent<AudioSource>().isPlaying) transform.GetComponent<AudioSource>().Stop();
+        else transform.GetComponent<AudioSource>().Play();
         this.rotating = rotating;
     }
 }
