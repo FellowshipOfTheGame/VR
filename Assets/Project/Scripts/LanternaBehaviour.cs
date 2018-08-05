@@ -13,6 +13,7 @@ public class LanternaBehaviour : MonoBehaviour {
 	public Material mat;
     public AudioClip liga;
     public AudioClip desliga;
+    public AudioClip pega;
 
     void Start(){
         changeState("on");
@@ -77,6 +78,7 @@ public class LanternaBehaviour : MonoBehaviour {
     void pegarLanterna(){
         if(!isOnHand){
             if(isNear()){
+                GetComponent<AudioSource>().PlayOneShot(pega);
                 isOnHand = true;
                 transform.parent = player.transform;
                 transform.localPosition = new Vector3(1.9f,-0.8f,0.4f);
