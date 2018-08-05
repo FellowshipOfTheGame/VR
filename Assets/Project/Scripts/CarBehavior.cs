@@ -63,11 +63,11 @@ public class CarBehavior : MonoBehaviour {
     }
         private void DetectPlayer()
     {
-        if (Vector3.Distance(PlayerCamera.transform.position, transform.position) <= 10 && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact1")))
+        if (Vector3.Distance(PlayerCamera.transform.position, transform.position) <= 7 && Input.GetKeyDown(KeyCode.E))
         {
             InsideCar = true;
         }
-        if(InsideCar==true && (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact1")))
+        if(InsideCar==true && (Input.GetKeyDown(KeyCode.R)))
         {
             Player.transform.position = currentPos;
             InsideCar = false;
