@@ -45,6 +45,7 @@ public class _Puzzle3Controller : MonoBehaviour {
 
 	public void OpenTheDoor() {
 		if (_passcodeIsCorrect) {
+            GetComponent<AudioSource>().Play();
 			_isFinished = true;
 			_animator.SetTrigger ("Open");
 
