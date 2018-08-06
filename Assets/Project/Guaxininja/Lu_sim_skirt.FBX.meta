@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: c35d5352e59b6b6489524a62e5bf303a
-timeCreated: 1477295130
-licenseType: Store
+guid: 3cbfa38753d9aa34bb9972d82af7f13b
+timeCreated: 1533595624
+licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Bone001
     100002: Bone002
@@ -79,12 +79,9 @@ ModelImporter:
     100142: Bone084
     100144: chain_holder_00
     100146: chain_holder_01
-    100148: Jacket_details_clean
-    100150: //RootNode
-    100152: Rigid_00
-    100154: Skirt_clean
-    100156: Skirt_root_bone
-    100158: Skirt_clean001
+    100148: //RootNode
+    100150: Skirt_clean
+    100152: Skirt_root_bone
     400000: Bone001
     400002: Bone002
     400004: Bone003
@@ -159,26 +156,18 @@ ModelImporter:
     400142: Bone084
     400144: chain_holder_00
     400146: chain_holder_01
-    400148: Jacket_details_clean
-    400150: //RootNode
-    400152: Rigid_00
-    400154: Skirt_clean
-    400156: Skirt_root_bone
-    400158: Skirt_clean001
+    400148: //RootNode
+    400150: Skirt_clean
+    400152: Skirt_root_bone
     2300000: chain_holder_00
     2300002: chain_holder_01
-    2300004: Skirt_clean001
     3300000: chain_holder_00
     3300002: chain_holder_01
-    3300004: Skirt_clean001
-    4300000: Rigid_00
-    4300002: chain_holder_01
-    4300004: chain_holder_00
-    4300006: Skirt_clean
-    4300008: Skirt_clean001
+    4300000: chain_holder_01
+    4300002: chain_holder_00
+    4300004: Skirt_clean
     9500000: //RootNode
-    13700000: Rigid_00
-    13700002: Skirt_clean
+    13700000: Skirt_clean
   materials:
     importMaterials: 1
     materialName: 0
@@ -189,6 +178,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -199,6 +190,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -206,7 +198,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -222,9 +217,11 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -235,7 +232,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
