@@ -64,6 +64,13 @@ public class CutscenePlayer : MonoBehaviour {
             // CutsceneObjects[2].SetActive(false);
             // CutsceneObjects[3].SetActive(false);
         }
+        else if(currstate == PlayState.Playing)
+        {
+            CutsceneObjects[0].SetActive(true);
+            CutsceneObjects[1].SetActive(true);
+        }
+    
+
 
     }
     

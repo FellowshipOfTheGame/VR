@@ -81,8 +81,10 @@ public class LanternaBehaviour : MonoBehaviour {
                 GetComponent<AudioSource>().PlayOneShot(pega);
                 isOnHand = true;
                 transform.parent = player.transform;
-                transform.localPosition = new Vector3(1.9f,-0.8f,0.4f);
-                transform.localEulerAngles = new Vector3(0f,-21f,0f);
+                //transform.localPosition = new Vector3(1.9f,-0.8f,0.4f);
+                transform.localPosition = new Vector3(1.9f,-0.66f,-1.9f);
+                //transform.localEulerAngles = new Vector3(0f,-21f,0f);
+                transform.localEulerAngles = new Vector3(0f,-15f,0f);
             }
         }
     }
