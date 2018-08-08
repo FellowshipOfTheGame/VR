@@ -34,10 +34,22 @@ public class LixeiraHide : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		if (isHiden == true) {
-			if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetButtonDown("Interact1")) {
+/* 		if (isHiden == true) {
+			if (Input.GetKeyDown(KeyCode.Mouse1)) {
 				DontHideLixeira ();
 			}
-		}
+		} */
+	}
+
+	public void DisablePlayer(){
+		player.GetComponent<FirstPersonController> ().enabled = false;
+	}
+
+	public void EnablePlayer(){
+		player.GetComponent<FirstPersonController> ().enabled = true;
+	}
+
+	public void PlaySound(){
+		GetComponent<AudioSource>().PlayOneShot(inTrash);
 	}
 }
