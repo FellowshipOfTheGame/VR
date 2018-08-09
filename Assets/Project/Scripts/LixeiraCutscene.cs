@@ -70,6 +70,6 @@ public class LixeiraCutscene : MonoBehaviour {
 	}
 
 	public bool CanPlayScene3(){
-		return has2finished;
+		return (has2finished && hasPlayed2);
 	}
 }
