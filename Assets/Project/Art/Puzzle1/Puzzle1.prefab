@@ -252,7 +252,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733679231698942}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.939392, y: -1.1584471, z: -0.4771043}
   m_LocalScale: {x: 100, y: 311.35556, z: 492.02124}
   m_Children: []
@@ -707,7 +707,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mechanism: []
   _isFinished: 0
-  _isPuzzleActive: 0
   _maxDistance: 6
   _luzPostes: {fileID: 0}
 --- !u!114 &114165559593654524

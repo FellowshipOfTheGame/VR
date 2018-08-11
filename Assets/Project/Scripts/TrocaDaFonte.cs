@@ -23,7 +23,7 @@ public class TrocaDaFonte : MonoBehaviour {
 	void Update () {
 		count += Time.deltaTime;
 
-		if(count < 3){
+		if(count > 2 && count < 3){
 			lb.changeState("off");
 		} else if(count > 3.1 && count < 4){
 			lb.changeState("on");
@@ -38,7 +38,7 @@ public class TrocaDaFonte : MonoBehaviour {
 		} else if(count > 6 && count < 7){
 			lb.changeState("off");
 			trocaParafonte();
-		} else if(count > 9 && count < 10){
+		} else if(count > 7 && count < 8){
 			lb.changeState("on");
 		}
 	}

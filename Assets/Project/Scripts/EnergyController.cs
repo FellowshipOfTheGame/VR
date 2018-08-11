@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnergyController : MonoBehaviour {
 
     public bool isOn;
+    public GameObject _cutscene;
 
     // Use this for initialization
     void Start () {
@@ -13,9 +14,9 @@ public class EnergyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Interact3"))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            //PowerSwitch();
+            turnOn();
         }
 	}
 
@@ -26,6 +27,7 @@ public class EnergyController : MonoBehaviour {
 
     public void turnOn()
     {
+        _cutscene.GetComponent<LixeiraCutscene>().PlaySceneOne();
         isOn = true;
     }
 
