@@ -22,7 +22,7 @@ public class _Puzzle2Controller : MonoBehaviour {
 		_hour = GameObject.Find ("Hour").GetComponent <_Puzzle2Pointer> ();
 		_spawnPoint = GameObject.Find ("SpawnPoint");
 
-		_currentTime = new Vector2 (6, 33);		// seta o horário do relógio para 6:33.
+		_currentTime = new Vector2 (6, 30);		// seta o horário do relógio para 6:33.
 
 		_minute._AdvanceClock ((int)_currentTime.y);
 		_hour._AdvanceClock ((int)(_currentTime.x * 60 + _currentTime.y));
