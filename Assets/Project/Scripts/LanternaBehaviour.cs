@@ -5,6 +5,7 @@ using UnityEngine;
 public class LanternaBehaviour : MonoBehaviour {
 
     public GameObject player;
+	public GameObject cat;
     bool isOnHand = false;
     int dirx = 1;
     float x=0,maxx=15;
@@ -85,6 +86,8 @@ public class LanternaBehaviour : MonoBehaviour {
                 transform.localPosition = new Vector3(1.9f,-0.66f,-1.9f);
                 //transform.localEulerAngles = new Vector3(0f,-21f,0f);
                 transform.localEulerAngles = new Vector3(0f,-15f,0f);
+
+				ActivateCat ();
             }
         }
     }
@@ -97,6 +100,10 @@ public class LanternaBehaviour : MonoBehaviour {
             return true;
         } else return false;
     }
+
+	private void ActivateCat() {
+		cat.SetActive (true);
+	}
 
 /*     void pegarLanterna(){
         if(!isOnHand){

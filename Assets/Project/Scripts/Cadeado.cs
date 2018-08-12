@@ -33,7 +33,7 @@ public class Cadeado : MonoBehaviour {
 			for (int i = 0; i < _renderer.Length; ++i) {
 				Color _color = _renderer [i].material.color;
 				_color.a -= 0.08f;
-				Debug.Log ("alpha[" + i + "] = " + _color.a);
+//				Debug.Log ("alpha[" + i + "] = " + _color.a);
 				if (_color.a >= 0f)
 					_renderer [i].material.color = _color;
 				else
