@@ -16,7 +16,6 @@ public class CutscenePlayer : MonoBehaviour {
     //public bool lockplayer;
     public GameObject[] CutsceneObjects;
    
-   
     void Start () {
         CheckCutscene();
         currstate = pd.state;
@@ -24,17 +23,17 @@ public class CutscenePlayer : MonoBehaviour {
 	}
 	
 	void Update () {
+        CheckState();
+        CheckCutscene();
         if (startplaying == true && currstate == PlayState.Paused)
             {
                 startplaying = false;
                 pd.Play();
             }
-        else if (Input.GetKey(KeyCode.E) && currstate==PlayState.Paused)
+        else if (Input.GetKey(KeyCode.C) && currstate==PlayState.Paused)
         {
             startplaying = true;
         }
-        CheckState();
-        CheckCutscene();
         DestroyCutsceneObjects();
 	}
     private void CheckCutscene()
@@ -64,14 +63,21 @@ public class CutscenePlayer : MonoBehaviour {
             // CutsceneObjects[2].SetActive(false);
             // CutsceneObjects[3].SetActive(false);
         }
-        else if(currstate == PlayState.Playing)
+        else if (currstate == PlayState.Playing)
         {
             CutsceneObjects[0].SetActive(true);
             CutsceneObjects[1].SetActive(true);
         }
-    
+    }
 
+    public void StartCutscene(int scene){
+        this.currscene = scene;
+        startplaying = true;
+    }
 
+    public bool IsPlaying(){
+        if (currstate == PlayState.Paused) return false;
+        else return true;
     }
     
 }
