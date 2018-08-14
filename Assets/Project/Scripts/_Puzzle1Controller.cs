@@ -34,7 +34,7 @@ public class _Puzzle1Controller : MonoBehaviour {
 			
 			_mechanism [i].Initialize();
 
-			int Number = Random.Range (1, 7);
+			int Number = Random.Range (1, (i == 0 || i == _mechanism.Length-1) ? 3 : 7);
 			//Debug.Log(Number);
 			_mechanism [i]._SetRotation (Number);
 //			_mechanism [i].GetComponent<EventTrigger> ().enabled = false;
@@ -60,7 +60,9 @@ public class _Puzzle1Controller : MonoBehaviour {
 
 	public void _CheckIfFinished() {		// Confere se todos os mecanismos estão com rotação 0 (posição correta)
 		for (int i = 0; i < _mechanism.Length; ++i) {
-			if ((_mechanism [i]._GetRotation() % 360) != 0) {
+            //Debug.Log("rotação["+i+"]: " + (_mechanism[i]._GetRotation() % ((i == 0 || i == _mechanism.Length - 1) ? 180 : 360)));
+            //Debug.Log("rotaçao%180=" + (_mechanism[i]._GetRotation() % 180));
+            if ((_mechanism [i]._GetRotation() % ((i == 0 || i == _mechanism.Length - 1) ? 4 : 8)) != 0) {
 				return;
 			}
 		}
