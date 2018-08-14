@@ -42,11 +42,14 @@ public class _GateController : MonoBehaviour {
 	}
 
 	public void _OpenGate() {
-		Debug.Log ("FIM!!");
 		_cutscene.currscene = 4;
 		_cutscene.startplaying = true;
 		_eventTrigger.enabled = false;
 		this.enabled = false;
+	}
+
+	private void OnTriggerEnter() {
+		Debug.Log ("FIM do jogoooooooo!! (Tem que carregar cena de créditos.)");
 	}
 
 }
