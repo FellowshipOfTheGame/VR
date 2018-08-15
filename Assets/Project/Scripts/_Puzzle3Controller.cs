@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class _Puzzle3Controller : MonoBehaviour {
 
 	public static bool _isFinished = false;
+    public GameObject PuzzleSound;
 
 	protected static Material[] _numbers = new Material[10];
 
@@ -38,13 +39,14 @@ public class _Puzzle3Controller : MonoBehaviour {
 			}
 		}
 
-		//Debug.Log ("FIM!");
+        //Debug.Log ("FIM!");
 
 		_passcodeIsCorrect = true;
 	}
 
 	public void OpenTheDoor() {
 		if (_passcodeIsCorrect) {
+            PuzzleSound.GetComponent<AudioSource>().Stop();
             GetComponent<AudioSource>().Play();
 			_isFinished = true;
 			_animator.SetTrigger ("Open");
