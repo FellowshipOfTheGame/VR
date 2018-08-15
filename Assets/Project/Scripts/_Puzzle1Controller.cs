@@ -15,12 +15,13 @@ public class _Puzzle1Controller : MonoBehaviour {
 	public EnergyController _energy;
     public AudioClip spark;
     public AudioClip holofote;
-    public GameObject Wall; 
+    public GameObject Wall;
 
-//	private FirstPersonController _player;
-	private Transform _camera;
+    //	private FirstPersonController _player;
+    private Transform _camera;
 	private RaycastHit _hit;
     private double _walltime;
+
 
 	// Use this for initialization
 	void Awake () {
