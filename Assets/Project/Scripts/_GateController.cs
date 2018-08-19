@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class _GateController : MonoBehaviour {
 
@@ -49,7 +50,8 @@ public class _GateController : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter() {
-		Debug.Log ("FIM do jogoooooooo!! (Tem que carregar cena de créditos.)");
+		Debug.Log ("FIM do jogoooooooo!!");
+		SceneManager.LoadScene("VonDancing", LoadSceneMode.Single);  // carrega a cena da intro
 	}
 
 }
