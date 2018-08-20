@@ -6,10 +6,14 @@ using UnityEngine.EventSystems;
 public class _Puzzle2Adjustment : MonoBehaviour {
 
 	public int _minutesAdjust;
+    public AudioClip click;
+    public AudioClip PuzzleSound;
+    public GameObject ClockTower;
 
 	private _Puzzle2Pointer _minute;
 	private _Puzzle2Pointer _hour;
 	private _Puzzle2Controller _controller;
+    private static int i = 0;
 
 	private EventTrigger _eventTrigger;
 
@@ -29,9 +33,17 @@ public class _Puzzle2Adjustment : MonoBehaviour {
 	}
 
 	void Update () {
-		if (_controller.hasEnergy()){
-			if (Input.GetMouseButtonDown (0))
-				_AdjustClock (_minutesAdjust);
+		if (_controller.hasEnergy() && (!_controller.isFinished())){
+            if (Input.GetMouseButtonDown(0))
+            {
+                _AdjustClock(_minutesAdjust);
+                GetComponent<AudioSource>().PlayOneShot(click);
+                if(i == 0)
+                {
+                    ClockTower.GetComponent<AudioSource>().PlayOneShot(PuzzleSound);
+                    i++;
+                }
+            }
 		}
 	}
 		

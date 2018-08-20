@@ -8,6 +8,7 @@ public class _Puzzle2Controller : MonoBehaviour {
 	public Vector2 _finishTime;
 	public GameObject _key;
 	public GameObject _power;
+    public GameObject ClockTower;
 
 	private GameObject _spawnPoint;
 	private Vector2 _currentTime;
@@ -42,12 +43,15 @@ public class _Puzzle2Controller : MonoBehaviour {
 		_currentTime.x = -1 * (int) _hour._GetRotation () / (int) 60;
 
 		if (_currentTime == _finishTime)
-			_FinishPuzzle ();
+			StartCoroutine(_FinishPuzzle ());
 	}
 
-	public void _FinishPuzzle() {
+	public IEnumerator _FinishPuzzle() {
         GetComponent<AudioSource>().Play();
+        ClockTower.GetComponent<AudioSource>().Stop();
         _isFinished = true;
+
+        yield return new WaitForSecondsRealtime(12);
 		Vector3 pos = _spawnPoint.transform.position;
 		_key.transform.position = pos;
 		//Instantiate (_key, _spawnPoint.transform.position, Quaternion.identity);

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrocaDaFonte : MonoBehaviour {
-	
+
+    public AudioClip liga;
+    public AudioClip desliga;
+
 	private float count = 0f;
 	// Light l;
 	GameObject von,fonte,l;
