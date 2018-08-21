@@ -13,6 +13,6 @@ public class Creditos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position += velocity*Time.deltaTime;
+		if(transform.position.y < 40f) transform.position += velocity*Time.deltaTime;
 	}
 }
