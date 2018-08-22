@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 //
 // Kino/Bloom v2 - Bloom filter for Unity
 //
@@ -43,8 +45,8 @@ Shader "Hidden/Post FX/Bloom"
         sampler2D _AutoExposure;
 
         float _PrefilterOffs;
-        float _Threshold;
-        float3 _Curve;
+        half _Threshold;
+        half3 _Curve;
         float _SampleScale;
 
         // -----------------------------------------------------------------------------
@@ -79,7 +81,11 @@ Shader "Hidden/Post FX/Bloom"
         {
             float autoExposure = 1.0;
             uv = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+
+        #if EYE_ADAPTATION
             autoExposure = tex2D(_AutoExposure, uv).r;
+        #endif
+
             return tex2D(tex, uv) * autoExposure;
         }
 
@@ -147,6 +153,7 @@ Shader "Hidden/Post FX/Bloom"
         Pass
         {
             CGPROGRAM
+                #pragma multi_compile __ EYE_ADAPTATION
                 #pragma multi_compile __ ANTI_FLICKER
                 #pragma multi_compile __ UNITY_COLORSPACE_GAMMA
                 #pragma vertex VertDefault

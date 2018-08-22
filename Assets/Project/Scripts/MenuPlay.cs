@@ -12,7 +12,7 @@ public class MenuPlay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Interact1") || Input.GetButtonDown("Fire1")){
+		if (Input.GetKeyDown(KeyCode.Mouse0)){
 			// Chamar a proxima cena aqui
 			SceneManager.LoadScene("Bosque", LoadSceneMode.Single);  // carrega a cena da intro
 		}
