@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuCreditos : MonoBehaviour {
 
@@ -11,9 +12,9 @@ public class MenuCreditos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetButtonDown("Interact1") || Input.GetButtonDown("Fire1")){
+		if (Input.GetKeyDown(KeyCode.Mouse0)){
 			// Chamar os creditos aqui
-			Debug.Log("Creditos");
+			SceneManager.LoadScene("VonDancing", LoadSceneMode.Single);  // carrega a cena dos creditos
 		}
 	}
 }

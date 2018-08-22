@@ -51,7 +51,7 @@ public class _GateController : MonoBehaviour {
 
 	private void OnTriggerEnter() {
 		Debug.Log ("FIM do jogoooooooo!!");
-		SceneManager.LoadScene("VonDancing", LoadSceneMode.Single);  // carrega a cena da intro
+		SceneManager.LoadScene("VonDancing", LoadSceneMode.Single);  // carrega a cena dos creditos
 	}
 
 }
