@@ -10,6 +10,8 @@ public class _CatController : MonoBehaviour {
 	public GameObject[] _waypoints;
     public GameObject cat;
 	public Transform _player;
+	public AudioSource _audioSource;
+	public AudioClip _audioClip;
 
 	private NavMeshAgent _agent;
 	private int _wp_max;				// Quantidade maxima de waypoints
@@ -37,6 +39,8 @@ public class _CatController : MonoBehaviour {
 			//Debug.Log ("_wp_counter % 2: " + (_wp_counter % 2));
 			if (_wp_counter == 0) {			// Caso 1, quando o gato está em baixo do poste piscando
 				if (_player_distance <= _dist1) {	// Se o player chegar perto, o gato vai para as arvores
+					_audioSource.clip = _audioClip;
+					_audioSource.Play ();
 					_MoveToNextWp (++_wp_counter, false);
 				}
 			} else if ((_wp_counter % 2) == 1) {	// Caso 2 (waypoints ímpar), quando o gato espera o player atras da arvore
