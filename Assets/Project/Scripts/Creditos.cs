@@ -14,7 +14,7 @@ public class Creditos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.position.y < 40f) transform.position += velocity*Time.deltaTime;
+		if(transform.position.y < 45f) transform.position += velocity*Time.deltaTime;
 
 		if(Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Menu", LoadSceneMode.Single);  // carrega a cena do menu
 	}

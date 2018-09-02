@@ -14,10 +14,10 @@ public class EnergyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.K))
+        /*if (Input.GetKeyDown(KeyCode.K))
         {
             turnOn();
-        }
+        }*/
 	}
 
     void PowerSwitch()
